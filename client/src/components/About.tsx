@@ -6,7 +6,7 @@ export function About({ profile }: { profile: Profile }) {
     <section id="about" className="band">
       <div className="wrap about">
         <Reveal className="photo">
-          <div className="frame"><img src="/creator.jpg" alt="Growia creator" /></div>
+          <div className="frame brandcard"><div className="logo-mark">G</div><b>growia</b><span>UGC ad studio</span></div>
           <div className="chip p1"><small>Based in</small><b>{profile.location} 🇮🇳</b></div>
           <div className="chip p2"><small>Reply time</small><b>&lt; 24 hrs</b></div>
         </Reveal>
