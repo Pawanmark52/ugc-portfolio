@@ -3,6 +3,7 @@ import type { SiteData } from "./types";
 // Used when the GraphQL API is unreachable (e.g. static hosting of the client only),
 // so the portfolio always renders. Keep in sync with server/src/data.ts.
 const id = "1tHwm79Tc7QPCrd1aOk9Dqk51rAgO4Drd";
+const id2 = "1j1xpsyWcl0oly5RFTqaQI4tKX_agII3r";
 
 export const fallback: SiteData = {
   profile: {
@@ -17,6 +18,11 @@ export const fallback: SiteData = {
     videoUrl: `https://drive.google.com/file/d/${id}/view?usp=sharing`,
     thumbnailUrl: `https://drive.google.com/thumbnail?id=${id}&sz=w800`,
     gradient: ["#ff4d8d", "#7c5cff"],
+  }, {
+    id: "w2", title: "UGC Ad Sample 2", category: "UGC video ad",
+    videoUrl: `https://drive.google.com/file/d/${id2}/view?usp=sharing`,
+    thumbnailUrl: `https://drive.google.com/thumbnail?id=${id2}&sz=w800`,
+    gradient: ["#21d4fd", "#7c5cff"],
   }],
   plans: [{
     name: "UGC Starter Pack", badge: "MOST POPULAR", videos: 5, priceUsd: 65, pricePerVideo: 13, deliveryDays: 2,
