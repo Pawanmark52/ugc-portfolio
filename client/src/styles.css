@@ -319,4 +319,3 @@ footer{padding:40px 0 100px;border-top:1px solid var(--line);overflow:hidden}
 /* brand logo (black-background art blended into the dark page) */
 .logo-img{width:42px;height:42px;object-fit:contain;filter:drop-shadow(0 0 10px rgba(255,255,255,.25))}
 .logo{gap:8px}
-.foot-logo{display:block;width:min(620px,86%);margin:10px auto 26px;user-select:none}

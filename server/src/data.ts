@@ -48,7 +48,7 @@ export const profile: Profile = {
   email: "growia.ae@gmail.com",
   phone: "+91 88246 24210",
   whatsapp: "918824624210",
-  instagram: "heyitspwn",
+  instagram: "growia.studio",
   location: "India",
   deliveryDays: 2,
   skills: ["UGC ads", "Hook writing", "Fast editing", "Reels / TikTok / Shorts", "Meta Ads ready"],
