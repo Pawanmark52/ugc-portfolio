@@ -35,7 +35,7 @@ export function Contact({ profile }: { profile: Profile }) {
             <textarea className="full" required minLength={5} rows={4} placeholder="Tell me about your product and what you want" value={form.message} onChange={set("message")} />
             <button className="btn full" disabled={loading}>{loading ? "Sending..." : "Send request"}</button>
             {data && <p className="ok full">✓ Got it! I'll reply within 24 hours.</p>}
-            {error && <p className="err full">{error.message.includes("fetch") ? "Server is offline. Please use WhatsApp or email below." : error.message}</p>}
+            {error && <p className="err full">{error.networkError ? "Couldn't send right now. Please use WhatsApp or email below." : error.message}</p>}
           </form>
 
           <div className="links">
