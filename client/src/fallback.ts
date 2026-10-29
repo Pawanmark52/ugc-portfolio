@@ -1,0 +1,40 @@
+import type { SiteData } from "./types";
+
+// Used when the GraphQL API is unreachable (e.g. static hosting of the client only),
+// so the portfolio always renders. Keep in sync with server/src/data.ts.
+const id = "1tHwm79Tc7QPCrd1aOk9Dqk51rAgO4Drd";
+
+export const fallback: SiteData = {
+  profile: {
+    name: "Pawan Soni", handle: "heyitspwn", tagline: "UGC ads that make people stop scrolling.",
+    bio: "I'm a content creator and developer who knows what makes short-form video convert: a sharp hook, natural delivery and clean, fast editing. Brands get real-feeling content without the agency price tag.",
+    email: "pawansoni2k3@gmail.com", phone: "+91 88246 24210", whatsapp: "918824624210",
+    instagram: "heyitspwn", location: "India", deliveryDays: 2,
+    skills: ["UGC ads", "Hook writing", "Fast editing", "Reels / TikTok / Shorts", "Meta Ads ready"],
+  },
+  works: [{
+    id: "w1", title: "UGC Ad Sample", category: "UGC video ad",
+    videoUrl: `https://drive.google.com/file/d/${id}/view?usp=sharing`,
+    thumbnailUrl: `https://drive.google.com/thumbnail?id=${id}&sz=w800`,
+    gradient: ["#ff4d8d", "#7c5cff"],
+  }],
+  plans: [{
+    name: "UGC Starter Pack", badge: "MOST POPULAR", videos: 5, priceUsd: 65, pricePerVideo: 13, deliveryDays: 2,
+    features: ["5 UGC videos (15-45 sec each)", "Custom hook and script for every video", "Captions, music and editing included", "1 revision per video", "Delivery in 2 days"],
+  }],
+  services: [
+    { icon: "🎬", title: "Product demo UGC", description: "Natural, handheld-style videos showing your product in real use." },
+    { icon: "🗣️", title: "Testimonial style", description: "Talking-to-camera reviews that build trust fast." },
+    { icon: "🪝", title: "Hook-first scripts", description: "The first 3 seconds decide everything. Every script starts with a tested hook." },
+    { icon: "✂️", title: "Pro editing", description: "Cuts, captions, B-roll, sound and color tuned for mobile." },
+    { icon: "📱", title: "Platform-ready", description: "TikTok, Reels, Shorts and Meta Ads formats in HD." },
+    { icon: "⚡", title: "2-day delivery", description: "Fast turnaround so you can launch campaigns this week." },
+  ],
+  faqs: [
+    { question: "Do I need to ship the product to you?", answer: "For digital products, apps and services no shipping is needed. For physical products we'll discuss options before ordering." },
+    { question: "What do you need from me?", answer: "Product link or details, brand tone, target audience and any must-say points. I handle the rest." },
+    { question: "Can I run these as paid ads?", answer: "Yes. Videos are delivered ready for organic posting and for Meta and TikTok ad campaigns." },
+    { question: "Is delivery really 2 days?", answer: "Yes. Once the script is approved and I have your product details, your 5 videos are delivered within 2 days." },
+    { question: "What if I'm not happy?", answer: "Each video includes a revision. Tell me what to change and I'll fix it." },
+  ],
+};

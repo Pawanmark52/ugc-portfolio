@@ -1,0 +1,47 @@
+import type { Plan, Profile } from "../types";
+
+export function Hero({ profile, plan }: { profile: Profile; plan?: Plan }) {
+  const price = plan?.priceUsd ?? 65;
+  return (
+    <header className="hero" id="top">
+      <div className="blob b1" /><div className="blob b2" />
+      <div className="wrap hero-grid">
+        <div>
+          <span className="tag"><i className="dot" /> Taking new orders this week</span>
+          <h1>UGC ads that make people <span className="grad">stop scrolling</span>.</h1>
+          <p className="lead">
+            I create authentic, high-converting UGC video ads for TikTok, Instagram Reels and Meta Ads.
+            Script, filming, edit and captions all handled. <b>Delivered in {profile.deliveryDays} days.</b>
+          </p>
+          <div className="cta">
+            <a href="#pricing" className="btn">Get {plan?.videos ?? 5} videos for ${price}</a>
+            <a href="#work" className="btn ghost">See my work</a>
+          </div>
+          <div className="stats">
+            <div><b>{plan?.videos ?? 5}</b><span>videos per pack</span></div>
+            <div><b>{profile.deliveryDays} days</b><span>delivery</span></div>
+            <div><b>${plan?.pricePerVideo ?? 13}</b><span>per video</span></div>
+          </div>
+        </div>
+
+        <div className="stage">
+          <div className="phone side l"><div className="notch" /><div className="screen g2" />
+            <div className="ui-bot"><b>@fitwithriya</b><span>Honest app review 💪</span></div></div>
+          <div className="phone side r"><div className="notch" /><div className="screen g3b" />
+            <div className="ui-bot"><b>@coffeecrate</b><span>Unboxing time ☕</span></div></div>
+          <div className="phone main">
+            <div className="notch" />
+            <div className="screen photo-screen" style={{ backgroundImage: "url(/pawan.jpg)" }} />
+            <div className="ui-top"><span>Following</span><b>For You</b></div>
+            <div className="cap">"Wait, this actually works?!"</div>
+            <div className="ui-side"><div><i>❤️</i>48.2K</div><div><i>💬</i>1,204</div><div><i>↗️</i>9.8K</div></div>
+            <div className="ui-bot"><b>@{profile.handle}</b><span>Skincare serum, 7 day results ✨ #ugc #fyp</span></div>
+          </div>
+          <div className="chip c1"><small>Hook retention</small><b className="grad">78%</b></div>
+          <div className="chip c2"><small>Delivery</small><b>⚡ {profile.deliveryDays} days</b></div>
+          <div className="chip c3"><small>Views on ad</small><b>1.2M</b></div>
+        </div>
+      </div>
+    </header>
+  );
+}
