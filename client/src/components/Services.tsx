@@ -1,42 +1,53 @@
 import type { Service } from "../types";
-import { Reveal } from "./Reveal";
-import { useCountUp } from "../hooks";
+import { Glass, Reveal, SectionHead } from "./ui";
 
-function Kpi({ label, value, suffix, prefix = "", note, bars, decimals = 0 }: {
-  label: string; value: number; suffix: string; prefix?: string; note: string; bars: number[]; decimals?: number;
-}) {
-  const { ref, n } = useCountUp(Math.round(value * 10 ** decimals));
-  return (
-    <div className="kpi">
-      <small>{label}</small>
-      <b ref={ref}>{prefix}{(n / 10 ** decimals).toFixed(decimals)}{suffix}</b>
-      <span className="up">{note}</span>
-      <div className="bars">{bars.map((h, i) => <i key={i} style={{ height: `${h}%`, animationDelay: `${i * 90}ms` }} />)}</div>
+const visuals: Record<string, JSX.Element> = {
+  "Hook-first scripts": (
+    <div className="viz hookviz">
+      <div className="bubble b1">"Stop scrolling..."</div>
+      <div className="bubble b2">3s hook ✓</div>
+      <div className="bar-row"><i style={{ width: "92%" }} /><i style={{ width: "64%" }} /><i style={{ width: "78%" }} /></div>
     </div>
-  );
-}
+  ),
+  "Pro editing": (
+    <div className="viz timeline">
+      {[34, 58, 22, 70, 46, 80, 30].map((w, i) => <i key={i} style={{ width: `${w}%`, animationDelay: `${i * 0.15}s` }} />)}
+      <u />
+    </div>
+  ),
+  "Product demo UGC": (
+    <div className="viz minis">
+      <div className="mini"><b /><i /></div><div className="mini m2"><b /><i /></div><div className="mini m3"><b /><i /></div>
+    </div>
+  ),
+  "Platform-ready": (
+    <div className="viz plats"><span>TikTok</span><span>Reels</span><span>Shorts</span><span>Meta</span><span>9:16 HD</span></div>
+  ),
+  "2-day delivery": (
+    <div className="viz ring"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" /><circle className="arc" cx="50" cy="50" r="40" /></svg><b>48h</b></div>
+  ),
+  "Testimonial style": (
+    <div className="viz stars"><div>★★★★★</div><p>"Honestly obsessed."</p></div>
+  ),
+};
 
 export function Services({ services }: { services: Service[] }) {
   return (
     <section id="services">
       <div className="wrap">
-        <Reveal><span className="eyebrow">What you get</span><h2>Everything for a <span className="grad">winning ad</span></h2></Reveal>
-        <div className="grid cols3">
+        <SectionHead eyebrow="What you get" title={<>Everything for a <span className="silver">winning ad</span></>} sub="One studio for scripts, filming, editing and delivery, built for short-form feeds." />
+        <div className="bento">
           {services.map((s, i) => (
-            <Reveal key={s.title} delay={i * 60}>
-              <div className="card"><div className="ico">{s.icon}</div><h3>{s.title}</h3><p>{s.description}</p></div>
+            <Reveal key={s.title} delay={i * 0.06} className={`bento-item i${i}`}>
+              <Glass className="bento-card">
+                <div className="ico">{s.icon}</div>
+                <h3>{s.title}</h3>
+                <p>{s.description}</p>
+                {visuals[s.title]}
+              </Glass>
             </Reveal>
           ))}
         </div>
-        <Reveal className="browser">
-          <div className="bar"><i /><i /><i /><em>ads-manager / campaign / ugc-pack</em></div>
-          <div className="dash">
-            <Kpi label="Click-through rate" value={2.8} suffix="%" decimals={1} note="▲ 41% vs studio ads" bars={[30, 45, 40, 65, 80, 100]} />
-            <Kpi label="Cost per purchase" value={9.4} prefix="$" suffix="" decimals={1} note="▼ 32% lower" bars={[100, 85, 70, 60, 48, 38]} />
-            <Kpi label="Thumb-stop rate" value={34} suffix="%" note="▲ 12 pts" bars={[35, 42, 55, 60, 78, 90]} />
-          </div>
-        </Reveal>
-        <p className="note">Illustrative dashboard mockup. Results vary by product and audience.</p>
       </div>
     </section>
   );

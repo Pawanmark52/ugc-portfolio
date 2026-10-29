@@ -1,28 +1,25 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { motion, useScroll, useSpring } from "framer-motion";
 
-const links = [["work", "Work"], ["about", "About"], ["services", "Services"], ["pricing", "Pricing"], ["faq", "FAQ"]];
+const links = [["work", "Work"], ["services", "Services"], ["process", "Process"], ["pricing", "Pricing"], ["faq", "FAQ"]];
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-  useEffect(() => {
-    const on = () => setScrolled(window.scrollY > 10);
-    on();
-    window.addEventListener("scroll", on, { passive: true });
-    return () => window.removeEventListener("scroll", on);
-  }, []);
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, { stiffness: 120, damping: 30 });
   return (
-    <nav className={scrolled ? "scrolled" : ""}>
-      <div className="wrap nav-row">
-        <a href="#top" className="logo">grow<span className="grad">ia</span></a>
-        <ul className={open ? "open" : ""}>
-          {links.map(([id, label]) => (
-            <li key={id}><a href={`#${id}`} onClick={() => setOpen(false)}>{label}</a></li>
-          ))}
-        </ul>
-        <a href="#contact" className="btn nav-cta">Order now</a>
-        <button className="burger" aria-label="Menu" aria-expanded={open} onClick={() => setOpen(o => !o)}>{open ? "✕" : "☰"}</button>
-      </div>
-    </nav>
+    <>
+      <motion.div className="progress" style={{ scaleX }} />
+      <header className="nav">
+        <div className="nav-pill glass">
+          <a href="#top" className="logo"><span className="logo-mark">G</span>growia</a>
+          <nav className={open ? "open" : ""}>
+            {links.map(([id, label]) => <a key={id} href={`#${id}`} onClick={() => setOpen(false)}>{label}</a>)}
+          </nav>
+          <a href="#contact" className="btn btn-sm">Get started</a>
+          <button className="burger" aria-label="Menu" aria-expanded={open} onClick={() => setOpen(o => !o)}><i /><i /></button>
+        </div>
+      </header>
+    </>
   );
 }

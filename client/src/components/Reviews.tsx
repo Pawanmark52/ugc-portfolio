@@ -1,4 +1,4 @@
-import { Reveal } from "./Reveal";
+import { Glass, Reveal, SectionHead } from "./ui";
 
 // Customer reviews from Feerie Candles, a brand we make UGC ads for.
 const reviews = [
@@ -9,21 +9,17 @@ const reviews = [
 
 export function Reviews() {
   return (
-    <section>
+    <section id="reviews">
       <div className="wrap">
-        <Reveal>
-          <span className="eyebrow">Brand work</span>
-          <h2>Made for <span className="grad">Feerie Candles</span></h2>
-          <p className="sub">We create UGC ads for Feerie Candles. Here's what their customers say about the product.</p>
-        </Reveal>
-        <div className="grid cols3">
+        <SectionHead eyebrow="Brand work" title={<>Made for <span className="silver">Feerie Candles</span></>} sub="We create UGC ads for Feerie Candles. Here's what their customers say about the product." />
+        <div className="grid3">
           {reviews.map((r, i) => (
-            <Reveal key={r.name} delay={i * 80}>
-              <div className="card rcard">
+            <Reveal key={r.name} delay={i * 0.1}>
+              <Glass className="rcard">
                 <div className="stars">★★★★★</div>
                 <p>"{r.text}"</p>
-                <div className="who"><div className="av">{r.name[0]}</div><div><b>{r.name}</b><br /><small>{r.city} · {r.product}</small></div></div>
-              </div>
+                <div className="who"><div className="av">{r.name[0]}</div><div><b>{r.name}</b><small>{r.city} · {r.product}</small></div></div>
+              </Glass>
             </Reveal>
           ))}
         </div>

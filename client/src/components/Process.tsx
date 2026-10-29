@@ -1,4 +1,4 @@
-import { Reveal } from "./Reveal";
+import { Glass, Reveal, SectionHead } from "./ui";
 
 export function Process({ days }: { days: number }) {
   const steps = [
@@ -8,13 +8,18 @@ export function Process({ days }: { days: number }) {
     ["Delivery", "HD files delivered, plus one revision per video."],
   ];
   return (
-    <section id="process" style={{ paddingTop: 0 }}>
+    <section id="process">
       <div className="wrap">
-        <Reveal><span className="eyebrow">How it works</span><h2>From order to <span className="grad">ready-to-post</span> in {days} days</h2></Reveal>
-        <div className="grid cols4">
+        <SectionHead eyebrow="How it works" title={<>From order to <span className="silver">ready-to-post</span> in {days} days</>} />
+        <div className="steps">
+          <div className="steps-line" />
           {steps.map(([t, d], i) => (
-            <Reveal key={t} delay={i * 80}>
-              <div className="card step"><span className="num">0{i + 1}</span><h3>{t}</h3><p>{d}</p></div>
+            <Reveal key={t} delay={i * 0.1}>
+              <Glass className="step">
+                <span className="num">0{i + 1}</span>
+                <h3>{t}</h3>
+                <p>{d}</p>
+              </Glass>
             </Reveal>
           ))}
         </div>
