@@ -12,7 +12,7 @@ export function Navbar() {
       <motion.div className="progress" style={{ scaleX }} />
       <header className="nav">
         <div className="nav-pill glass">
-          <a href="#top" className="logo"><span className="logo-mark">G</span>growia</a>
+          <a href="#top" className="logo"><img className="logo-img" src="/logo-mark.png" alt="" width="42" height="42" />growia</a>
           <nav className={open ? "open" : ""}>
             {links.map(([id, label]) => <a key={id} href={`#${id}`} onClick={() => setOpen(false)}>{label}</a>)}
           </nav>
