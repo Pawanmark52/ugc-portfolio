@@ -26,10 +26,28 @@ export function Hero({ profile, plan }: { profile: Profile; plan?: Plan }) {
 
         <div className="stage">
           <div className="phone side l"><div className="notch" /><div className="screen g2" />
+            <svg className="scene" viewBox="0 0 140 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+              <g fill="#fff" opacity=".7"><circle cx="24" cy="90" r="3" className="spark" /><circle cx="112" cy="70" r="4" className="spark d2" /><circle cx="100" cy="140" r="2.5" className="spark d3" /><circle cx="34" cy="150" r="2" className="spark" /></g>
+              <g className="conf"><rect x="40" y="70" width="6" height="3" rx="1" fill="#fde68a" /><rect x="92" y="84" width="6" height="3" rx="1" fill="#fff" /><rect x="66" y="58" width="5" height="3" rx="1" fill="#93c5fd" /><rect x="110" y="100" width="5" height="3" rx="1" fill="#fde68a" /></g>
+              <path className="spark d2" d="M70 74l3 8 8 3-8 3-3 8-3-8-8-3 8-3z" fill="#fff" />
+              <rect x="30" y="170" width="80" height="64" rx="7" fill="#fff" />
+              <rect x="30" y="170" width="80" height="14" fill="#dbeafe" />
+              <rect x="66" y="170" width="8" height="64" fill="#1d4ed8" />
+              <g className="lid"><rect x="24" y="148" width="92" height="24" rx="6" fill="#eff6ff" /><rect x="66" y="148" width="8" height="24" fill="#1d4ed8" /><circle cx="62" cy="144" r="7" fill="none" stroke="#1d4ed8" strokeWidth="4" /><circle cx="78" cy="144" r="7" fill="none" stroke="#1d4ed8" strokeWidth="4" /></g>
+              <ellipse cx="70" cy="240" rx="46" ry="6" fill="#0b1b3a" opacity=".18" />
+            </svg>
             <div className="type-tag">📦 UNBOXING</div>
             <div className="side-copy"><b>"Okay, the packaging alone..."</b><span>First-reaction unboxing</span></div>
           </div>
           <div className="phone side r"><div className="notch" /><div className="screen g3b" />
+            <svg className="scene" viewBox="0 0 140 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+              <circle cx="70" cy="120" r="52" fill="#fff" opacity=".18" />
+              <circle cx="70" cy="104" r="22" fill="#fff" />
+              <path d="M26 190c4-30 24-44 44-44s40 14 44 44z" fill="#fff" />
+              <circle cx="62" cy="102" r="2.4" fill="#1d4ed8" /><circle cx="78" cy="102" r="2.4" fill="#1d4ed8" />
+              <path d="M62 112q8 7 16 0" stroke="#1d4ed8" strokeWidth="2.4" fill="none" strokeLinecap="round" />
+              <g className="wave" fill="#fff">{[0,1,2,3,4,5,6,7,8].map(i => <rect key={i} x={30 + i * 10} y="206" width="5" height="26" rx="2.5" style={{ animationDelay: `${i * 0.12}s` }} />)}</g>
+            </svg>
             <div className="type-tag">🗣️ TESTIMONIAL</div>
             <div className="side-copy"><div className="mini-stars">★★★★★</div><b>"I use it every single day."</b><span>Talking-to-camera review</span></div>
           </div>
@@ -44,10 +62,11 @@ export function Hero({ profile, plan }: { profile: Profile; plan?: Plan }) {
               </defs>
               <rect width="180" height="380" fill="url(#bg)" />
               <circle cx="90" cy="230" r="120" fill="url(#glow)" />
-              <g fill="#fff" opacity=".55"><circle cx="28" cy="170" r="5" /><circle cx="150" cy="150" r="7" /><circle cx="40" cy="250" r="3" /><circle cx="146" cy="260" r="4" /><circle cx="22" cy="120" r="2.5" /><circle cx="158" cy="210" r="2.5" /></g>
+              <g fill="#fff" opacity=".55" className="spark"><circle cx="28" cy="170" r="5" /><circle cx="150" cy="150" r="7" /><circle cx="40" cy="250" r="3" /><circle cx="146" cy="260" r="4" /><circle cx="22" cy="120" r="2.5" /><circle cx="158" cy="210" r="2.5" /></g>
               <g fill="#fff"><path d="M138 108l3 8 8 3-8 3-3 8-3-8-8-3 8-3z" /><path d="M34 205l2 5 5 2-5 2-2 5-2-5-5-2 5-2z" opacity=".8" /></g>
               <ellipse cx="90" cy="337" rx="64" ry="12" fill="#0b1b3a" opacity=".25" />
               <ellipse cx="90" cy="332" rx="58" ry="10" fill="#fff" opacity=".8" />
+              <g className="bottle">
               <rect x="78" y="94" width="24" height="42" rx="12" fill="#1d4ed8" />
               <rect x="70" y="132" width="40" height="36" rx="8" fill="#0b1b3a" />
               <rect x="74" y="166" width="32" height="26" fill="#cfe3ff" />
@@ -58,12 +77,15 @@ export function Hero({ profile, plan }: { profile: Profile; plan?: Plan }) {
               <text x="90" y="260" textAnchor="middle" fontSize="8" fontWeight="800" fill="#1d4ed8" letterSpacing="1.5">BRAND</text>
               <rect x="74" y="266" width="32" height="2" rx="1" fill="#93c5fd" />
               <rect x="60" y="198" width="7" height="120" rx="3.5" fill="#fff" opacity=".55" />
+              </g>
             </svg>
             <div className="segs"><i className="s1" /><i className="s2" /><i className="s3" /></div>
             <div className="seg-labels"><span>HOOK</span><span>DEMO</span><span>CTA</span></div>
             <div className="ad-badge">Sponsored</div>
             <div className="sticker">🏷️ Your product here</div>
-            <div className="cap">"Wait, this <em>actually works</em>?!"</div>
+            <div className="cap"><span>Stop scrolling. <em>You need this</em> 👀</span><span>Day 7: <em>actually works</em>?!</span><span>Tap below, <em>link in bio</em> 👇</span></div>
+            <div className="hearts"><i>❤️</i><i>💙</i><i>❤️</i></div>
+            <div className="cmts"><span>😍 where do I get this??</span><span>Link please!! 🙏</span><span>ordering rn 🛒</span></div>
             <div className="ui-side"><div><i>❤️</i>Like</div><div><i>💬</i>Comment</div><div><i>↗️</i>Share</div></div>
             <div className="ui-bot"><b>@{profile.handle}</b><span>♪ Honest review, real results #ugc #fyp</span></div>
             <div className="shop">Shop now →</div>

@@ -228,3 +228,31 @@ footer{border-top:1px solid var(--line);padding:26px 0 90px;text-align:center;co
 .brandcard .logo-mark{width:96px;height:96px;border-radius:28px;background:#fff;color:var(--a);display:grid;place-items:center;font-size:3.4rem;font-weight:900;box-shadow:0 16px 40px rgba(11,27,58,.3);margin-bottom:10px}
 .brandcard b{font-size:1.8rem;letter-spacing:-.02em}
 .brandcard span{opacity:.9;font-size:.95rem}
+
+/* richer hero animation */
+.cap{display:grid;place-items:center;min-width:176px;left:50%;transform:translateX(-50%)}
+.cap span{grid-area:1/1;opacity:0;animation:capcycle 6s infinite;white-space:nowrap}
+.cap span:nth-child(2){animation-delay:2s}.cap span:nth-child(3){animation-delay:4s}
+@keyframes capcycle{0%{opacity:0;transform:translateY(6px)}5%,30%{opacity:1;transform:none}34%,100%{opacity:0}}
+.bottle{animation:bob 4s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+@keyframes bob{50%{transform:translateY(-7px) rotate(-1.5deg)}}
+.spark{animation:twink 2.6s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+.spark.d2{animation-delay:.8s}.spark.d3{animation-delay:1.6s}
+@keyframes twink{50%{opacity:.25;transform:scale(.7)}}
+.lid{animation:lid 3.2s ease-in-out infinite;transform-box:fill-box;transform-origin:left bottom}
+@keyframes lid{0%,20%{transform:none}50%,75%{transform:translateY(-16px) rotate(-14deg)}100%{transform:none}}
+.conf{animation:conf 3.2s ease-in-out infinite}
+@keyframes conf{0%,30%{opacity:0;transform:translateY(20px)}60%{opacity:1;transform:translateY(-6px)}100%{opacity:0;transform:translateY(10px)}}
+.wave rect{transform-box:fill-box;transform-origin:center;animation:wave 1.1s ease-in-out infinite}
+@keyframes wave{50%{transform:scaleY(.3)}}
+.hearts i{position:absolute;right:26px;bottom:120px;z-index:4;font-style:normal;font-size:1rem;opacity:0;animation:rise 3.2s ease-in infinite}
+.hearts i:nth-child(2){right:40px;animation-delay:1.1s}.hearts i:nth-child(3){right:16px;animation-delay:2.1s}
+@keyframes rise{0%{opacity:0;transform:translateY(0) scale(.6)}15%{opacity:1}100%{opacity:0;transform:translateY(-120px) scale(1.2)}}
+.cmts{position:absolute;left:12px;bottom:112px;z-index:4;display:grid}
+.cmts span{grid-area:1/1;justify-self:start;background:rgba(255,255,255,.92);color:var(--txt);font-size:.64rem;font-weight:700;padding:5px 10px;border-radius:12px 12px 12px 3px;opacity:0;animation:cmt 6s infinite;box-shadow:0 4px 14px rgba(0,0,0,.2)}
+.cmts span:nth-child(2){animation-delay:2s}.cmts span:nth-child(3){animation-delay:4s}
+@keyframes cmt{0%{opacity:0;transform:translateY(10px)}6%,28%{opacity:1;transform:none}34%,100%{opacity:0;transform:translateY(-8px)}}
+.phone .scene ~ .type-tag{z-index:5}
+.phone.side .scene{opacity:.95}
+.phone.side .side-copy{text-shadow:0 1px 6px rgba(0,0,0,.35)}
+@media(prefers-reduced-motion:reduce){.cap span:first-child,.cmts span:first-child{opacity:1}}
