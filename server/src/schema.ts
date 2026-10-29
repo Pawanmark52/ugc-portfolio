@@ -45,29 +45,11 @@ export const typeDefs = `#graphql
     answer: String!
   }
 
-  type Inquiry {
-    id: ID!
-    name: String!
-    email: String!
-    createdAt: String!
-  }
-
-  input InquiryInput {
-    name: String!
-    email: String!
-    product: String
-    message: String!
-  }
-
   type Query {
     profile: Profile!
     works: [WorkSample!]!
     plans: [Plan!]!
     services: [Service!]!
     faqs: [Faq!]!
-  }
-
-  type Mutation {
-    submitInquiry(input: InquiryInput!): Inquiry!
   }
 `;

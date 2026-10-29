@@ -9,9 +9,3 @@ export const SITE_QUERY = gql`
     faqs { question answer }
   }
 `;
-
-export const SUBMIT_INQUIRY = gql`
-  mutation SubmitInquiry($input: InquiryInput!) {
-    submitInquiry(input: $input) { id }
-  }
-`;
