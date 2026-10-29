@@ -14,7 +14,7 @@ export function Navbar() {
   return (
     <nav className={scrolled ? "scrolled" : ""}>
       <div className="wrap nav-row">
-        <a href="#top" className="logo">pawan<span className="grad">.ugc</span></a>
+        <a href="#top" className="logo">grow<span className="grad">ia</span></a>
         <ul className={open ? "open" : ""}>
           {links.map(([id, label]) => (
             <li key={id}><a href={`#${id}`} onClick={() => setOpen(false)}>{label}</a></li>

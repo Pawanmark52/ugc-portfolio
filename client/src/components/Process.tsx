@@ -3,8 +3,8 @@ import { Reveal } from "./Reveal";
 export function Process({ days }: { days: number }) {
   const steps = [
     ["Place order", "Pay and share your product, brand and target audience."],
-    ["Script approval", "I send hook and script ideas. You pick your favourites."],
-    ["I create", `Filming and editing, all done within ${days} days.`],
+    ["Script approval", "We send hook and script ideas. You pick your favourites."],
+    ["We create", `Filming and editing, all done within ${days} days.`],
     ["Delivery", "HD files delivered, plus one revision per video."],
   ];
   return (

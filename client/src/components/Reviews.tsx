@@ -1,6 +1,6 @@
 import { Reveal } from "./Reveal";
 
-// Customer reviews from Feerie Candles, a brand I make UGC ads for.
+// Customer reviews from Feerie Candles, a brand we make UGC ads for.
 const reviews = [
   { name: "Priya Sharma", city: "Mumbai", product: "Feerie White Cube Candle", text: "The packaging is absolutely luxury! The vanilla jasmine scent filled my entire living room within 15 minutes of lighting." },
   { name: "Rohan Verma", city: "Delhi", product: "Feerie White Cube Candle", text: "Ordered the Duo Pack for our coffee table decor. Clean soot-free burn and very aesthetic shape." },
@@ -14,7 +14,7 @@ export function Reviews() {
         <Reveal>
           <span className="eyebrow">Brand work</span>
           <h2>Made for <span className="grad">Feerie Candles</span></h2>
-          <p className="sub">I create UGC ads for Feerie Candles. Here's what their customers say about the product.</p>
+          <p className="sub">We create UGC ads for Feerie Candles. Here's what their customers say about the product.</p>
         </Reveal>
         <div className="grid cols3">
           {reviews.map((r, i) => (

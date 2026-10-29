@@ -1,4 +1,4 @@
-# Pawan Soni - UGC Portfolio
+# Growia - UGC Ad Studio Website
 
 React + TypeScript (Vite) client, Node + TypeScript GraphQL API (Apollo Server).
 

@@ -35,7 +35,7 @@ export function Contact({ profile }: { profile: Profile }) {
     }
   };
 
-  const wa = `https://wa.me/${profile.whatsapp}?text=${encodeURIComponent("Hi Pawan, I want the 5 UGC video pack")}`;
+  const wa = `https://wa.me/${profile.whatsapp}?text=${encodeURIComponent("Hi Growia, I want the 5 UGC video pack")}`;
   const mail = `mailto:${profile.email}?subject=${encodeURIComponent("UGC Pack Order")}`;
 
   return (
@@ -44,15 +44,15 @@ export function Contact({ profile }: { profile: Profile }) {
         <Reveal className="box">
           <span className="eyebrow">Let's work</span>
           <h2>Ready for ads that <span className="grad">actually convert</span>?</h2>
-          <p className="sub auto">Send me your product and I'll reply within 24 hours with script ideas.</p>
+          <p className="sub auto">Send us your product and we'll reply within 24 hours with script ideas.</p>
 
           <form className="form" onSubmit={onSubmit}>
             <input required placeholder="Your name" value={form.name} onChange={set("name")} maxLength={100} />
             <input required type="email" placeholder="Email" value={form.email} onChange={set("email")} />
             <input className="full" placeholder="Product / brand link (optional)" value={form.product} onChange={set("product")} />
-            <textarea className="full" required minLength={5} rows={4} placeholder="Tell me about your product and what you want" value={form.message} onChange={set("message")} />
+            <textarea className="full" required minLength={5} rows={4} placeholder="Tell us about your product and what you want" value={form.message} onChange={set("message")} />
             <button className="btn full" disabled={status === "loading"}>{status === "loading" ? "Sending..." : "Send request"}</button>
-            {status === "done" && <p className="ok full">✓ Got it! I'll reply within 24 hours.</p>}
+            {status === "done" && <p className="ok full">✓ Got it! We'll reply within 24 hours.</p>}
             {error && <p className="err full">{error}</p>}
           </form>
 

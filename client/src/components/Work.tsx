@@ -19,7 +19,7 @@ export function Work({ works }: { works: WorkSample[] }) {
     <section id="work">
       <div className="wrap">
         <Reveal>
-          <span className="eyebrow">Portfolio</span>
+          <span className="eyebrow">Our work</span>
           <h2>Recent <span className="grad">UGC ads</span></h2>
           <p className="sub">Tap a video to watch the full ad.</p>
         </Reveal>

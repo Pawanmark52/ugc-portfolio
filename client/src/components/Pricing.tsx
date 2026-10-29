@@ -17,7 +17,7 @@ export function Pricing({ plans }: { plans: Plan[] }) {
             <a href="#contact" className="btn block">Order the pack</a>
           </Reveal>
         ))}
-        <p className="note">Need 10+ videos or monthly content? <a href="#contact" className="accent">Message me for a custom quote.</a></p>
+        <p className="note">Need 10+ videos or monthly content? <a href="#contact" className="accent">Message us for a custom quote.</a></p>
       </div>
     </section>
   );

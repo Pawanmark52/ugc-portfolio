@@ -19,7 +19,7 @@ export default function App() {
   const site = data ?? fallback;
   const { profile } = site;
   const plan = site.plans[0];
-  const wa = `https://wa.me/${profile.whatsapp}?text=${encodeURIComponent("Hi Pawan, I want the 5 UGC video pack")}`;
+  const wa = `https://wa.me/${profile.whatsapp}?text=${encodeURIComponent("Hi Growia, I want the 5 UGC video pack")}`;
 
   return (
     <>

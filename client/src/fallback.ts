@@ -1,16 +1,15 @@
 import type { SiteData } from "./types";
 
 // Used when the GraphQL API is unreachable (e.g. static hosting of the client only),
-// so the portfolio always renders. Keep in sync with server/src/data.ts.
+// so the site always renders. Keep in sync with server/src/data.ts.
 const id = "1tHwm79Tc7QPCrd1aOk9Dqk51rAgO4Drd";
 const id2 = "1j1xpsyWcl0oly5RFTqaQI4tKX_agII3r";
-const id3 = "1k05jdCFiJB4evqkARZDFPzAU06q8PgpU";
 
 export const fallback: SiteData = {
   profile: {
-    name: "Pawan Soni", handle: "heyitspwn", tagline: "UGC ads that make people stop scrolling.",
-    bio: "I'm a content creator and developer who knows what makes short-form video convert: a sharp hook, natural delivery and clean, fast editing. Brands get real-feeling content without the agency price tag.",
-    email: "pawansoni2k3@gmail.com", phone: "+91 88246 24210", whatsapp: "918824624210",
+    name: "Growia", handle: "growia", tagline: "UGC ads that make people stop scrolling.",
+    bio: "We're a UGC studio that knows what makes short-form video convert: a sharp hook, natural delivery and clean, fast editing. Brands get real-feeling content without the agency price tag.",
+    email: "growia.ae@gmail.com", phone: "+91 88246 24210", whatsapp: "918824624210",
     instagram: "heyitspwn", location: "India", deliveryDays: 2,
     skills: ["UGC ads", "Hook writing", "Fast editing", "Reels / TikTok / Shorts", "Meta Ads ready"],
   },
@@ -24,11 +23,6 @@ export const fallback: SiteData = {
     videoUrl: `https://drive.google.com/file/d/${id2}/view?usp=sharing`,
     thumbnailUrl: `https://drive.google.com/thumbnail?id=${id2}&sz=w800`,
     gradient: ["#2f6bff", "#93c5fd"],
-  }, {
-    id: "w3", title: "UGC Ad Sample 3", category: "UGC video ad",
-    videoUrl: `https://drive.google.com/file/d/${id3}/view?usp=sharing`,
-    thumbnailUrl: `https://drive.google.com/thumbnail?id=${id3}&sz=w800`,
-    gradient: ["#1e40af", "#60a5fa"],
   }],
   plans: [{
     name: "UGC Starter Pack", badge: "MOST POPULAR", videos: 5, priceUsd: 65, pricePerVideo: 13, deliveryDays: 2,
@@ -44,9 +38,9 @@ export const fallback: SiteData = {
   ],
   faqs: [
     { question: "Do I need to ship the product to you?", answer: "For digital products, apps and services no shipping is needed. For physical products we'll discuss options before ordering." },
-    { question: "What do you need from me?", answer: "Product link or details, brand tone, target audience and any must-say points. I handle the rest." },
+    { question: "What do you need from me?", answer: "Product link or details, brand tone, target audience and any must-say points. We handle the rest." },
     { question: "Can I run these as paid ads?", answer: "Yes. Videos are delivered ready for organic posting and for Meta and TikTok ad campaigns." },
-    { question: "Is delivery really 2 days?", answer: "Yes. Once the script is approved and I have your product details, your 5 videos are delivered within 2 days." },
-    { question: "What if I'm not happy?", answer: "Each video includes a revision. Tell me what to change and I'll fix it." },
+    { question: "Is delivery really 2 days?", answer: "Yes. Once the script is approved and we have your product details, your 5 videos are delivered within 2 days." },
+    { question: "What if I'm not happy?", answer: "Each video includes a revision. Tell us what to change and we'll fix it." },
   ],
 };
