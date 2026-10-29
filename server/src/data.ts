@@ -60,14 +60,14 @@ export const works: WorkSample[] = [
     title: "UGC Ad Sample",
     category: "UGC video ad",
     driveFileId: "1tHwm79Tc7QPCrd1aOk9Dqk51rAgO4Drd",
-    gradient: ["#ff4d8d", "#7c5cff"],
+    gradient: ["#1d4ed8", "#38bdf8"],
   },
   {
     id: "w2",
     title: "UGC Ad Sample 2",
     category: "UGC video ad",
     driveFileId: "1j1xpsyWcl0oly5RFTqaQI4tKX_agII3r",
-    gradient: ["#21d4fd", "#7c5cff"],
+    gradient: ["#2f6bff", "#93c5fd"],
   },
 ];
 

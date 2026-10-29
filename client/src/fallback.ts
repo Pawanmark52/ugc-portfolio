@@ -17,12 +17,12 @@ export const fallback: SiteData = {
     id: "w1", title: "UGC Ad Sample", category: "UGC video ad",
     videoUrl: `https://drive.google.com/file/d/${id}/view?usp=sharing`,
     thumbnailUrl: `https://drive.google.com/thumbnail?id=${id}&sz=w800`,
-    gradient: ["#ff4d8d", "#7c5cff"],
+    gradient: ["#1d4ed8", "#38bdf8"],
   }, {
     id: "w2", title: "UGC Ad Sample 2", category: "UGC video ad",
     videoUrl: `https://drive.google.com/file/d/${id2}/view?usp=sharing`,
     thumbnailUrl: `https://drive.google.com/thumbnail?id=${id2}&sz=w800`,
-    gradient: ["#21d4fd", "#7c5cff"],
+    gradient: ["#2f6bff", "#93c5fd"],
   }],
   plans: [{
     name: "UGC Starter Pack", badge: "MOST POPULAR", videos: 5, priceUsd: 65, pricePerVideo: 13, deliveryDays: 2,

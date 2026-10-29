@@ -1,25 +1,32 @@
 import { Reveal } from "./Reveal";
 
+// Customer reviews from Feerie Candles, a brand I make UGC ads for.
 const reviews = [
-  ["R", "Riya S.", "Skincare brand", "Got 5 videos in 2 days and the hooks were great. Our Reels reach doubled."],
-  ["A", "Arjun M.", "D2C founder", "Felt like real customer content. Perfect for our Meta ads."],
-  ["K", "Karan P.", "App owner", "Super fast, great communication and unbeatable price for the quality."],
+  { name: "Priya Sharma", city: "Mumbai", product: "Feerie White Cube Candle", text: "The packaging is absolutely luxury! The vanilla jasmine scent filled my entire living room within 15 minutes of lighting." },
+  { name: "Rohan Verma", city: "Delhi", product: "Feerie White Cube Candle", text: "Ordered the Duo Pack for our coffee table decor. Clean soot-free burn and very aesthetic shape." },
+  { name: "Ananya Deshmukh", city: "Bangalore", product: "Feerie White Cube Candle", text: "Bought the Gift Box Set as a housewarming present. The recipient was completely obsessed with the scent profile!" },
 ];
 
 export function Reviews() {
   return (
     <section>
       <div className="wrap">
-        <Reveal><span className="eyebrow">Reviews</span><h2>What brands <span className="grad">say</span></h2></Reveal>
+        <Reveal>
+          <span className="eyebrow">Brand work</span>
+          <h2>Made for <span className="grad">Feerie Candles</span></h2>
+          <p className="sub">I create UGC ads for Feerie Candles. Here's what their customers say about the product.</p>
+        </Reveal>
         <div className="grid cols3">
-          {reviews.map(([a, n, r, q], i) => (
-            <Reveal key={n} delay={i * 80}>
-              <div className="card"><div className="stars">★★★★★</div><p>"{q}"</p>
-                <div className="who"><div className="av">{a}</div><div><b>{n}</b><br /><small>{r}</small></div></div></div>
+          {reviews.map((r, i) => (
+            <Reveal key={r.name} delay={i * 80}>
+              <div className="card rcard">
+                <div className="stars">★★★★★</div>
+                <p>"{r.text}"</p>
+                <div className="who"><div className="av">{r.name[0]}</div><div><b>{r.name}</b><br /><small>{r.city} · {r.product}</small></div></div>
+              </div>
             </Reveal>
           ))}
         </div>
-        <p className="note">Sample reviews. Replace with your real client feedback.</p>
       </div>
     </section>
   );
