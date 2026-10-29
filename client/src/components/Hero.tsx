@@ -26,20 +26,28 @@ export function Hero({ profile, plan }: { profile: Profile; plan?: Plan }) {
 
         <div className="stage">
           <div className="phone side l"><div className="notch" /><div className="screen g2" />
-            <div className="ui-bot"><b>@fitwithriya</b><span>Honest app review 💪</span></div></div>
+            <div className="type-tag">📦 UNBOXING</div>
+            <div className="side-copy"><b>"Okay, the packaging alone..."</b><span>First-reaction unboxing</span></div>
+          </div>
           <div className="phone side r"><div className="notch" /><div className="screen g3b" />
-            <div className="ui-bot"><b>@coffeecrate</b><span>Unboxing time ☕</span></div></div>
+            <div className="type-tag">🗣️ TESTIMONIAL</div>
+            <div className="side-copy"><div className="mini-stars">★★★★★</div><b>"I use it every single day."</b><span>Talking-to-camera review</span></div>
+          </div>
           <div className="phone main">
             <div className="notch" />
             <div className="screen photo-screen" style={{ backgroundImage: "url(/pawan.jpg)" }} />
-            <div className="ui-top"><span>Following</span><b>For You</b></div>
-            <div className="cap">"Wait, this actually works?!"</div>
-            <div className="ui-side"><div><i>❤️</i>48.2K</div><div><i>💬</i>1,204</div><div><i>↗️</i>9.8K</div></div>
-            <div className="ui-bot"><b>@{profile.handle}</b><span>Skincare serum, 7 day results ✨ #ugc #fyp</span></div>
+            <div className="segs"><i className="s1" /><i className="s2" /><i className="s3" /></div>
+            <div className="seg-labels"><span>HOOK</span><span>DEMO</span><span>CTA</span></div>
+            <div className="ad-badge">Sponsored</div>
+            <div className="sticker">🏷️ Your product here</div>
+            <div className="cap">"Wait, this <em>actually works</em>?!"</div>
+            <div className="ui-side"><div><i>❤️</i>Like</div><div><i>💬</i>Comment</div><div><i>↗️</i>Share</div></div>
+            <div className="ui-bot"><b>@{profile.handle}</b><span>Honest review, real results #ugc #fyp</span></div>
+            <div className="shop">Shop now →</div>
           </div>
-          <div className="chip c1"><small>Hook retention</small><b className="grad">78%</b></div>
+          <div className="chip c1"><small>Every video</small><b>🪝 Hook-first script</b></div>
           <div className="chip c2"><small>Delivery</small><b>⚡ {profile.deliveryDays} days</b></div>
-          <div className="chip c3"><small>Views on ad</small><b>1.2M</b></div>
+          <div className="chip c3"><small>Per pack</small><b>🎬 {plan?.videos ?? 5} videos</b></div>
         </div>
       </div>
     </header>

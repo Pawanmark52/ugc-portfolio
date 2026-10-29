@@ -65,7 +65,7 @@ h1{font-size:clamp(2.2rem,6vw,4.1rem);line-height:1.08;font-weight:900;letter-sp
 .chip{position:absolute;z-index:4;background:rgba(255,255,255,.95);border:1px solid var(--line);backdrop-filter:blur(8px);padding:10px 14px;border-radius:14px;font-size:.78rem;box-shadow:0 14px 40px rgba(29,78,216,.15);animation:float 6s ease-in-out infinite}
 .chip small{color:var(--mut)}
 .chip b{display:block;font-size:1.05rem}
-.chip.c1{left:-4%;bottom:70px;animation-delay:-1s}
+.chip.c1{left:-14%;bottom:20px;animation-delay:-1s}
 .chip.c2{right:-2%;top:24px;animation-delay:-3s}
 .chip.c3{right:2%;bottom:30px;animation-delay:-4s}
 .marq{border-block:1px solid var(--line);overflow:hidden;padding:18px 0;background:var(--card)}
@@ -178,7 +178,7 @@ footer{border-top:1px solid var(--line);padding:26px 0 90px;text-align:center;co
  .dash,.links{grid-template-columns:1fr}
  .phone.side{display:none}
  .stage{height:auto;padding:20px 0 40px}
- .chip.c1{left:0;bottom:auto;top:40px}.chip.c2{right:0;top:auto;bottom:130px}.chip.c3{display:none}
+ .chip.c1{left:0;bottom:auto;top:-18px}.chip.c2{right:0;top:auto;bottom:130px}.chip.c3{display:none}
  .form{grid-template-columns:1fr}
  .photo .p1{right:-6px}.photo .p2{left:-6px}
 }
@@ -201,3 +201,23 @@ footer{border-top:1px solid var(--line);padding:26px 0 90px;text-align:center;co
 .phone,.vid .meta,.badge,.av,.vid:not(.next) .pl{color:#fff}
 .vid.next{color:var(--txt)}
 .chip{color:var(--txt)}
+
+/* UGC mockup details */
+.segs{position:absolute;top:36px;left:12px;right:12px;display:flex;gap:4px;z-index:4}
+.segs i{flex:1;height:3px;border-radius:3px;background:rgba(255,255,255,.35);position:relative;overflow:hidden}
+.segs i::after{content:"";position:absolute;inset:0;background:#fff;transform:scaleX(0);transform-origin:left;animation:fill 6s linear infinite}
+.segs .s2::after{animation-delay:2s}.segs .s3::after{animation-delay:4s}
+@keyframes fill{0%{transform:scaleX(0)}33%,100%{transform:scaleX(1)}}
+.seg-labels{position:absolute;top:44px;left:12px;right:12px;display:flex;z-index:4;font-size:.58rem;font-weight:800;letter-spacing:.08em;text-shadow:0 1px 4px rgba(0,0,0,.5)}
+.seg-labels span{flex:1}
+.ad-badge{position:absolute;top:70px;left:12px;z-index:4;font-size:.62rem;font-weight:700;background:rgba(255,255,255,.2);backdrop-filter:blur(6px);padding:3px 9px;border-radius:999px}
+.sticker{position:absolute;left:10px;top:36%;z-index:4;background:#fff;color:var(--txt);font-weight:800;font-size:.66rem;padding:6px 10px;border-radius:10px;transform:rotate(-6deg);box-shadow:0 6px 18px rgba(0,0,0,.3);animation:float 5s ease-in-out infinite}
+.cap em{font-style:normal;color:#7dd3fc}
+.shop{position:absolute;left:12px;right:12px;bottom:14px;z-index:4;background:#fff;color:var(--a);font-weight:800;font-size:.78rem;text-align:center;padding:9px;border-radius:12px}
+.ui-bot{bottom:58px}
+.ui-side{bottom:110px}
+.type-tag{position:absolute;top:38px;left:10px;z-index:4;background:rgba(255,255,255,.22);backdrop-filter:blur(6px);padding:4px 10px;border-radius:999px;font-size:.6rem;font-weight:800;letter-spacing:.06em}
+.side-copy{position:absolute;left:12px;right:12px;bottom:26px;z-index:4;display:grid;gap:4px;line-height:1.3}
+.side-copy b{font-size:.86rem}
+.side-copy span{font-size:.62rem;opacity:.85}
+.mini-stars{color:#fde68a;letter-spacing:2px;font-size:.8rem}
