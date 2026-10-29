@@ -4,6 +4,7 @@ import type { SiteData } from "./types";
 // so the portfolio always renders. Keep in sync with server/src/data.ts.
 const id = "1tHwm79Tc7QPCrd1aOk9Dqk51rAgO4Drd";
 const id2 = "1j1xpsyWcl0oly5RFTqaQI4tKX_agII3r";
+const id3 = "1k05jdCFiJB4evqkARZDFPzAU06q8PgpU";
 
 export const fallback: SiteData = {
   profile: {
@@ -23,6 +24,11 @@ export const fallback: SiteData = {
     videoUrl: `https://drive.google.com/file/d/${id2}/view?usp=sharing`,
     thumbnailUrl: `https://drive.google.com/thumbnail?id=${id2}&sz=w800`,
     gradient: ["#2f6bff", "#93c5fd"],
+  }, {
+    id: "w3", title: "UGC Ad Sample 3", category: "UGC video ad",
+    videoUrl: `https://drive.google.com/file/d/${id3}/view?usp=sharing`,
+    thumbnailUrl: `https://drive.google.com/thumbnail?id=${id3}&sz=w800`,
+    gradient: ["#1e40af", "#60a5fa"],
   }],
   plans: [{
     name: "UGC Starter Pack", badge: "MOST POPULAR", videos: 5, priceUsd: 65, pricePerVideo: 13, deliveryDays: 2,
