@@ -25,7 +25,7 @@ export const fallback: SiteData = {
     gradient: ["#2f6bff", "#93c5fd"],
   }],
   plans: [{
-    name: "UGC Starter Pack", badge: "MOST POPULAR", videos: 5, priceUsd: 65, pricePerVideo: 13, deliveryDays: 2,
+    name: "UGC Starter Pack", badge: "MOST POPULAR", videos: 5, priceUsd: 50, pricePerVideo: 10, deliveryDays: 2,
     features: ["5 UGC videos (15-45 sec each)", "Custom hook and script for every video", "Captions, music and editing included", "1 revision per video", "Delivery in 2 days"],
   }],
   services: [

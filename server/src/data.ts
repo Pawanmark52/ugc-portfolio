@@ -76,7 +76,7 @@ export const plans: Plan[] = [
     name: "UGC Starter Pack",
     badge: "MOST POPULAR",
     videos: 5,
-    priceUsd: 65,
+    priceUsd: 50,
     deliveryDays: 2,
     features: [
       "5 UGC videos (15-45 sec each)",

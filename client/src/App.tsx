@@ -52,7 +52,7 @@ export default function App() {
         <Contact profile={profile} />
       </main>
       <Footer name={profile.name} />
-      <div className="sticky"><a className="btn" href={wa} target="_blank" rel="noopener noreferrer">Order {plan?.videos ?? 5} videos · ${plan?.priceUsd ?? 65}</a></div>
+      <div className="sticky"><a className="btn" href={wa} target="_blank" rel="noopener noreferrer">Order {plan?.videos ?? 5} videos · ${plan?.priceUsd ?? 50}</a></div>
     </>
   );
 }

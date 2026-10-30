@@ -18,7 +18,7 @@ export function Hero({ profile, plan }: { profile: Profile; plan?: Plan }) {
   const yPhone = useTransform(scrollYProgress, [0, 1], [0, -90]);
   const y3d = useTransform(scrollYProgress, [0, 1], [0, 160]);
   const fade = useTransform(scrollYProgress, [0, 0.8], [1, 0.2]);
-  const price = plan?.priceUsd ?? 65;
+  const price = plan?.priceUsd ?? 50;
   return (
     <section className="hero" id="top" ref={ref}>
       <div className="bg-grid" />
@@ -41,7 +41,7 @@ export function Hero({ profile, plan }: { profile: Profile; plan?: Plan }) {
           <motion.div className="hero-stats glass" initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.65 }}>
             <div><b>{plan?.videos ?? 5}</b><span>videos per pack</span></div>
             <div><b>{profile.deliveryDays} days</b><span>delivery</span></div>
-            <div><b>${plan?.pricePerVideo ?? 13}</b><span>per video</span></div>
+            <div><b>${plan?.pricePerVideo ?? 10}</b><span>per video</span></div>
           </motion.div>
         </motion.div>
 
