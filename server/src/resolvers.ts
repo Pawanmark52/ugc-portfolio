@@ -1,4 +1,4 @@
-import { faqs, plans, profile, services, works, type Plan, type WorkSample } from "./data.js";
+import { addons, faqs, plans, profile, services, works, type Plan, type WorkSample } from "./data.js";
 
 const driveView = (id: string) => `https://drive.google.com/file/d/${id}/view?usp=sharing`;
 const driveThumb = (id: string) => `https://drive.google.com/thumbnail?id=${id}&sz=w800`;
@@ -10,6 +10,7 @@ export const resolvers = {
     plans: () => plans,
     services: () => services,
     faqs: () => faqs,
+    addons: () => addons,
   },
   WorkSample: {
     videoUrl: (w: WorkSample) => driveView(w.driveFileId),

@@ -30,6 +30,7 @@ export const typeDefs = `#graphql
     videos: Int!
     priceUsd: Int!
     originalPriceUsd: Int
+    featured: Boolean!
     pricePerVideo: Float!
     deliveryDays: Int!
     features: [String!]!
@@ -39,6 +40,11 @@ export const typeDefs = `#graphql
     icon: String!
     title: String!
     description: String!
+  }
+
+  type Addon {
+    name: String!
+    price: String!
   }
 
   type Faq {
@@ -52,5 +58,6 @@ export const typeDefs = `#graphql
     plans: [Plan!]!
     services: [Service!]!
     faqs: [Faq!]!
+    addons: [Addon!]!
   }
 `;

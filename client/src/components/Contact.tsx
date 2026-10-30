@@ -59,6 +59,8 @@ export function Contact({ profile }: { profile: Profile }) {
               <select className="full" value={form.plan} onChange={set("plan")} aria-label="Package">
                 <option>5-Video Pack ($50)</option>
                 <option>Single Video ($13)</option>
+                <option>3-Video Pack ($36)</option>
+                <option>10-Video Pack ($90)</option>
               </select>
               <input className="full" placeholder="Product / brand link (optional)" value={form.product} onChange={set("product")} />
               <textarea className="full" required minLength={5} rows={5} placeholder="Tell us about your product and what you want" value={form.message} onChange={set("message")} />

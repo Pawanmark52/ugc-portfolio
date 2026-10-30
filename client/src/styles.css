@@ -320,7 +320,7 @@ footer{padding:40px 0 100px;border-top:1px solid var(--line);overflow:hidden}
 .logo{gap:8px}
 
 /* offer / plans */
-.plans{display:grid;grid-template-columns:1fr 1.08fr;gap:22px;align-items:stretch;max-width:960px;margin:30px auto 0;text-align:center}
+.plans{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;align-items:stretch;margin:34px auto 0;text-align:center}
 .plan{display:flex}
 .plan.hot .price-box{border-color:rgba(255,255,255,.5);box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 0 0 1px rgba(255,255,255,.1),0 30px 90px rgba(255,255,255,.1),0 24px 70px rgba(0,0,0,.6);background:linear-gradient(160deg,rgba(255,255,255,.18),rgba(255,255,255,.04))}
 .price .was{font-family:Inter,sans-serif;font-size:1.5rem;color:var(--mut);font-weight:500;margin-left:12px;letter-spacing:0;text-decoration-thickness:2px}
@@ -335,3 +335,21 @@ footer{padding:40px 0 100px;border-top:1px solid var(--line);overflow:hidden}
 .form select{background:rgba(0,0,0,.4);border:1px solid var(--line);border-radius:14px;padding:15px 16px;color:#fff;font:inherit;font-size:.95rem;width:100%;appearance:none;cursor:pointer}
 .form select option{background:#111;color:#fff}
 @media(max-width:860px){.plans{grid-template-columns:1fr}.offer{text-align:center}}
+
+.plan .price-box{padding:40px 24px 28px}
+.plan .price{font-size:3.6rem}
+.plan .price .was{font-size:1.2rem;margin-left:8px}
+.plan .unit{display:block;color:var(--mut);margin-top:2px}
+.plan .badge{font-size:.62rem;padding:5px 12px}
+.plan .per{display:flex;flex-direction:column;align-items:center;gap:6px}
+.plan .save{margin-left:0}
+.plan .price-box ul{margin:22px 0;font-size:.9rem;gap:10px}
+.plan.hot{transform:translateY(-10px)}
+.addons{display:flex;align-items:center;gap:20px;flex-wrap:wrap;justify-content:center;margin:26px auto 0;padding:16px 22px;border-radius:20px;text-align:left}
+.addons::after{display:none}
+.addons>div{display:flex;gap:10px;flex-wrap:wrap}
+.addons span{padding:7px 14px;border:1px solid var(--line);border-radius:999px;font-size:.84rem;background:rgba(255,255,255,.05);color:#d9dbe1}
+.addons em{font-style:normal;color:#fff;font-weight:700;margin-left:6px}
+@media(max-width:1100px){.plans{grid-template-columns:repeat(2,1fr)}.plan.hot{transform:none}}
+@media(max-width:640px){.plans{grid-template-columns:1fr}}
+.plan .price-box{display:flex;flex-direction:column}.plan .price-box ul{flex:1}

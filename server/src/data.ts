@@ -26,6 +26,7 @@ export interface Plan {
   videos: number;
   priceUsd: number;
   originalPriceUsd: number | null;
+  featured: boolean;
   deliveryDays: number;
   features: string[];
 }
@@ -79,6 +80,7 @@ export const plans: Plan[] = [
     videos: 1,
     priceUsd: 13,
     originalPriceUsd: null,
+    featured: false,
     deliveryDays: 2,
     features: [
       "1 UGC video (15-45 sec)",
@@ -89,21 +91,64 @@ export const plans: Plan[] = [
     ],
   },
   {
-    name: "5-Video Pack",
-    badge: "LAUNCH OFFER · SAVE $15",
-    videos: 5,
-    priceUsd: 50,
-    originalPriceUsd: 65,
+    name: "3-Video Pack",
+    badge: null,
+    videos: 3,
+    priceUsd: 36,
+    originalPriceUsd: 39,
+    featured: false,
     deliveryDays: 2,
     features: [
-      "5 UGC videos (15-45 sec each)",
+      "3 UGC videos (15-45 sec each)",
       "Custom hook and script for every video",
       "Captions, music and editing included",
       "1 revision per video",
       "Delivery in 2 days",
     ],
   },
+  {
+    name: "5-Video Pack",
+    badge: "MOST POPULAR · SAVE $15",
+    videos: 5,
+    priceUsd: 50,
+    originalPriceUsd: 65,
+    featured: true,
+    deliveryDays: 2,
+    features: [
+      "5 UGC videos (15-45 sec each)",
+      "Custom hook and script for every video",
+      "Captions, music and editing included",
+      "1 revision per video",
+      "Bonus: free 2nd hook for 1 video",
+      "Delivery in 2 days",
+    ],
+  },
+  {
+    name: "10-Video Pack",
+    badge: "BEST VALUE · SAVE $40",
+    videos: 10,
+    priceUsd: 90,
+    originalPriceUsd: 130,
+    featured: false,
+    deliveryDays: 2,
+    features: [
+      "10 UGC videos (15-45 sec each)",
+      "Custom hook and script for every video",
+      "Captions, music and editing included",
+      "1 revision per video",
+      "Bonus: free extra hook variation of your best video",
+      "First videos delivered in 2 days",
+    ],
+  },
 ];
+
+export const addons = [
+  { name: "Rush delivery (24 hours)", price: "+$10" },
+  { name: "Extra revision", price: "+$3 / video" },
+  { name: "Extra hook variation", price: "+$5" },
+  { name: "Raw footage files", price: "+$5" },
+];
+
 
 export const services: Service[] = [
   { icon: "🎬", title: "Product demo UGC", description: "Natural, handheld-style videos showing your product in real use." },

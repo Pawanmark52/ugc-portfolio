@@ -1,35 +1,35 @@
-import type { Plan } from "../types";
+import type { Addon, Plan } from "../types";
 import { Glass, Reveal, SectionHead } from "./ui";
 
 function Card({ p, delay }: { p: Plan; delay: number }) {
-  const hot = p.originalPriceUsd !== null;
-  const save = hot ? p.originalPriceUsd! - p.priceUsd : 0;
-  const pct = hot ? Math.round((save / p.originalPriceUsd!) * 100) : 0;
+  const save = p.originalPriceUsd ? p.originalPriceUsd - p.priceUsd : 0;
+  const pct = p.originalPriceUsd ? Math.round((save / p.originalPriceUsd) * 100) : 0;
+  const unit = p.videos === 1 ? "video" : "videos";
   return (
-    <Reveal delay={delay} className={`plan ${hot ? "hot" : ""}`}>
-      <Glass className="price-box" tilt={hot ? 4 : 6}>
+    <Reveal delay={delay} className={`plan ${p.featured ? "hot" : ""}`}>
+      <Glass className="price-box" tilt={p.featured ? 4 : 6}>
         {p.badge && <span className="badge">{p.badge}</span>}
         <h3>{p.name}</h3>
         <div className="price">
           <span className="silver">${p.priceUsd}</span>
-          {hot && <s className="was">${p.originalPriceUsd}</s>}
-          <small>/ {p.videos} {p.videos === 1 ? "video" : "videos"}</small>
+          {p.originalPriceUsd && <s className="was">${p.originalPriceUsd}</s>}
         </div>
-        <p className="per">{hot ? <>Just ${p.pricePerVideo} per video <b className="save">You save ${save} ({pct}% off)</b></> : <>${p.pricePerVideo} per video</>}</p>
+        <small className="unit">for {p.videos} {unit}</small>
+        <p className="per">${p.pricePerVideo} per video{save > 0 && <b className="save">Save ${save} ({pct}% off)</b>}</p>
         <ul>{p.features.map(f => <li key={f}>{f}</li>)}</ul>
-        <a href="#contact" className="btn block">{hot ? `Claim the offer · $${p.priceUsd}` : `Order 1 video · $${p.priceUsd}`} <span>→</span></a>
+        <a href="#contact" className="btn block">{p.videos === 1 ? "Order 1 video" : `Get ${p.videos} videos`} · ${p.priceUsd} <span>→</span></a>
       </Glass>
     </Reveal>
   );
 }
 
-export function Pricing({ plans }: { plans: Plan[] }) {
+export function Pricing({ plans, addons }: { plans: Plan[]; addons: Addon[] }) {
   const single = plans.find(p => p.videos === 1);
-  const pack = plans.find(p => p.videos > 1);
+  const pack = plans.find(p => p.videos === 5);
   return (
     <section id="pricing">
       <div className="wrap center">
-        <SectionHead center eyebrow="Pricing" title={<>Simple pricing. <span className="silver">Bigger savings</span> on 5.</>} sub="No monthly contracts. Order one video, or grab the pack and pay less per video." />
+        <SectionHead center eyebrow="Pricing" title={<>The more you order, <span className="silver">the less you pay</span></>} sub="No monthly contracts. Start with one video, or grab a pack and pay less per video." />
         {single && pack && (
           <Reveal className="offer glass">
             <span className="flame">🔥</span>
@@ -38,10 +38,15 @@ export function Pricing({ plans }: { plans: Plan[] }) {
           </Reveal>
         )}
         <div className="plans">
-          {single && <Card p={single} delay={0} />}
-          {pack && <Card p={pack} delay={0.12} />}
+          {plans.map((p, i) => <Card key={p.name} p={p} delay={i * 0.08} />)}
         </div>
-        <p className="note">Need 10+ videos or monthly content? <a href="#contact" className="link-u">Message us for a custom quote.</a></p>
+        {addons.length > 0 && (
+          <Reveal className="addons glass">
+            <b>Add-ons</b>
+            <div>{addons.map(a => <span key={a.name}>{a.name} <em>{a.price}</em></span>)}</div>
+          </Reveal>
+        )}
+        <p className="note">Need monthly content or more than 10 videos? <a href="#contact" className="link-u">Message us for a custom quote.</a></p>
       </div>
     </section>
   );

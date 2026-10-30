@@ -1,4 +1,4 @@
-const items = ["UGC ADS", "TIKTOK", "INSTAGRAM REELS", "META ADS", "YOUTUBE SHORTS", "2-DAY DELIVERY", "HOOK-FIRST SCRIPTS", "1 VIDEO · $13", "5 VIDEOS · $50", "SAVE $15"];
+const items = ["UGC ADS", "TIKTOK", "INSTAGRAM REELS", "META ADS", "YOUTUBE SHORTS", "2-DAY DELIVERY", "HOOK-FIRST SCRIPTS", "1 VIDEO · $13", "3 VIDEOS · $36", "5 VIDEOS · $50", "10 VIDEOS · $90"];
 
 export function Marquee() {
   const row = [...items, ...items, ...items];

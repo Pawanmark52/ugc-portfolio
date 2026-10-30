@@ -21,7 +21,7 @@ export default function App() {
   const { data } = useQuery<SiteData>(SITE_QUERY);
   const site = data ?? fallback;
   const { profile } = site;
-  const plan = site.plans.find(p => p.videos > 1) ?? site.plans[0];
+  const plan = site.plans.find(p => p.videos === 5) ?? site.plans[0];
   const wa = `https://wa.me/${profile.whatsapp}?text=${encodeURIComponent("Hi Growia, I want the 5 UGC video pack")}`;
 
   useEffect(() => {
@@ -46,7 +46,7 @@ export default function App() {
         <Services services={site.services} />
         <Process days={profile.deliveryDays} />
         <Results />
-        <Pricing plans={site.plans} />
+        <Pricing plans={site.plans} addons={site.addons} />
         <Reviews />
         <Faq faqs={site.faqs} />
         <Contact profile={profile} />
