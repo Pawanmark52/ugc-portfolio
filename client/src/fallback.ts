@@ -6,6 +6,7 @@ const id = "1tHwm79Tc7QPCrd1aOk9Dqk51rAgO4Drd";
 const id2 = "1j1xpsyWcl0oly5RFTqaQI4tKX_agII3r";
 const id3 = "1XZcPRwH3g_gVRC4kAF5Dor0OwWIxnjo-";
 const id4 = "1_kwOgNmTk6y2E4sBnniVphYvZKuE5FCA";
+const id5 = "1dxq4bikaSW0zbpuVKJ46Fleaa5sbwaV4";
 
 export const fallback: SiteData = {
   profile: {
@@ -39,6 +40,12 @@ export const fallback: SiteData = {
     previewUrl: `https://drive.google.com/file/d/${id4}/preview`,
     thumbnailUrl: `https://drive.google.com/thumbnail?id=${id4}&sz=w800`,
     gradient: ["#334155", "#94a3b8"],
+  }, {
+    id: "w5", title: "UGC Ad Sample 5", category: "UGC video ad",
+    videoUrl: `https://drive.google.com/file/d/${id5}/view?usp=sharing`,
+    previewUrl: `https://drive.google.com/file/d/${id5}/preview`,
+    thumbnailUrl: `https://drive.google.com/thumbnail?id=${id5}&sz=w800`,
+    gradient: ["#475569", "#cbd5e1"],
   }],
   plans: [
     {
