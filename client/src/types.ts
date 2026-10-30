@@ -6,7 +6,7 @@ export interface WorkSample {
   id: string; title: string; category: string; videoUrl: string; thumbnailUrl: string; gradient: string[];
 }
 export interface Plan {
-  name: string; badge: string | null; videos: number; priceUsd: number; pricePerVideo: number;
+  name: string; badge: string | null; videos: number; priceUsd: number; originalPriceUsd: number | null; pricePerVideo: number;
   deliveryDays: number; features: string[];
 }
 export interface Service { icon: string; title: string; description: string }

@@ -26,7 +26,7 @@ export function Hero({ profile, plan }: { profile: Profile; plan?: Plan }) {
       <div className="wrap hero-grid">
         <motion.div className="hero-copy" style={{ y: yText, opacity: fade }}>
           <motion.span className="pill glass" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}>
-            <i className="dot" /> Booking new brands this week
+            <i className="dot" /> Launch offer: 5 videos for ${price} <b>save ${(plan?.originalPriceUsd ?? 65) - price}</b>
           </motion.span>
           <motion.h1 initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.2, ease: [0.2, 0.7, 0.2, 1] }}>
             UGC ads that make people <span className="silver">stop scrolling</span>.
@@ -35,7 +35,7 @@ export function Hero({ profile, plan }: { profile: Profile; plan?: Plan }) {
             We create authentic, high-converting UGC video ads for TikTok, Instagram Reels and Meta Ads. Script, filming, edit and captions, all handled. Delivered in {profile.deliveryDays} days.
           </motion.p>
           <motion.div className="cta" initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.5 }}>
-            <a href="#pricing" className="btn">Get {plan?.videos ?? 5} videos for ${price} <span>→</span></a>
+            <a href="#pricing" className="btn">Get {plan?.videos ?? 5} videos for ${price} <s>${plan?.originalPriceUsd ?? 65}</s> <span>→</span></a>
             <a href="#work" className="btn ghost">See our work</a>
           </motion.div>
           <motion.div className="hero-stats glass" initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.65 }}>

@@ -24,10 +24,16 @@ export const fallback: SiteData = {
     thumbnailUrl: `https://drive.google.com/thumbnail?id=${id2}&sz=w800`,
     gradient: ["#2f6bff", "#93c5fd"],
   }],
-  plans: [{
-    name: "UGC Starter Pack", badge: "MOST POPULAR", videos: 5, priceUsd: 50, pricePerVideo: 10, deliveryDays: 2,
-    features: ["5 UGC videos (15-45 sec each)", "Custom hook and script for every video", "Captions, music and editing included", "1 revision per video", "Delivery in 2 days"],
-  }],
+  plans: [
+    {
+      name: "Single Video", badge: null, videos: 1, priceUsd: 13, originalPriceUsd: null, pricePerVideo: 13, deliveryDays: 2,
+      features: ["1 UGC video (15-45 sec)", "Custom hook and script", "Captions, music and editing included", "1 revision", "Delivery in 2 days"],
+    },
+    {
+      name: "5-Video Pack", badge: "LAUNCH OFFER · SAVE $15", videos: 5, priceUsd: 50, originalPriceUsd: 65, pricePerVideo: 10, deliveryDays: 2,
+      features: ["5 UGC videos (15-45 sec each)", "Custom hook and script for every video", "Captions, music and editing included", "1 revision per video", "Delivery in 2 days"],
+    },
+  ],
   services: [
     { icon: "🎬", title: "Product demo UGC", description: "Natural, handheld-style videos showing your product in real use." },
     { icon: "🗣️", title: "Testimonial style", description: "Talking-to-camera reviews that build trust fast." },

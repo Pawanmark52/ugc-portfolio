@@ -25,6 +25,7 @@ export interface Plan {
   badge: string | null;
   videos: number;
   priceUsd: number;
+  originalPriceUsd: number | null;
   deliveryDays: number;
   features: string[];
 }
@@ -73,10 +74,26 @@ export const works: WorkSample[] = [
 
 export const plans: Plan[] = [
   {
-    name: "UGC Starter Pack",
-    badge: "MOST POPULAR",
+    name: "Single Video",
+    badge: null,
+    videos: 1,
+    priceUsd: 13,
+    originalPriceUsd: null,
+    deliveryDays: 2,
+    features: [
+      "1 UGC video (15-45 sec)",
+      "Custom hook and script",
+      "Captions, music and editing included",
+      "1 revision",
+      "Delivery in 2 days",
+    ],
+  },
+  {
+    name: "5-Video Pack",
+    badge: "LAUNCH OFFER · SAVE $15",
     videos: 5,
     priceUsd: 50,
+    originalPriceUsd: 65,
     deliveryDays: 2,
     features: [
       "5 UGC videos (15-45 sec each)",

@@ -29,6 +29,7 @@ export const typeDefs = `#graphql
     badge: String
     videos: Int!
     priceUsd: Int!
+    originalPriceUsd: Int
     pricePerVideo: Float!
     deliveryDays: Int!
     features: [String!]!
