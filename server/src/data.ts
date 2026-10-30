@@ -59,17 +59,17 @@ export const profile: Profile = {
 export const works: WorkSample[] = [
   {
     id: "w1",
-    title: "UGC Ad Sample",
+    title: "UGC Ad Sample 1",
     category: "UGC video ad",
-    driveFileId: "1tHwm79Tc7QPCrd1aOk9Dqk51rAgO4Drd",
-    gradient: ["#1d4ed8", "#38bdf8"],
+    driveFileId: "1dxq4bikaSW0zbpuVKJ46Fleaa5sbwaV4",
+    gradient: ["#475569", "#cbd5e1"],
   },
   {
     id: "w2",
     title: "UGC Ad Sample 2",
     category: "UGC video ad",
-    driveFileId: "1j1xpsyWcl0oly5RFTqaQI4tKX_agII3r",
-    gradient: ["#2f6bff", "#93c5fd"],
+    driveFileId: "1_kwOgNmTk6y2E4sBnniVphYvZKuE5FCA",
+    gradient: ["#334155", "#94a3b8"],
   },
   {
     id: "w3",
@@ -82,15 +82,15 @@ export const works: WorkSample[] = [
     id: "w4",
     title: "UGC Ad Sample 4",
     category: "UGC video ad",
-    driveFileId: "1_kwOgNmTk6y2E4sBnniVphYvZKuE5FCA",
-    gradient: ["#334155", "#94a3b8"],
+    driveFileId: "1j1xpsyWcl0oly5RFTqaQI4tKX_agII3r",
+    gradient: ["#2f6bff", "#93c5fd"],
   },
   {
     id: "w5",
     title: "UGC Ad Sample 5",
     category: "UGC video ad",
-    driveFileId: "1dxq4bikaSW0zbpuVKJ46Fleaa5sbwaV4",
-    gradient: ["#475569", "#cbd5e1"],
+    driveFileId: "1tHwm79Tc7QPCrd1aOk9Dqk51rAgO4Drd",
+    gradient: ["#1d4ed8", "#38bdf8"],
   },
 ];
 
