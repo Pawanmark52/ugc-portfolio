@@ -4,6 +4,7 @@ import type { SiteData } from "./types";
 // so the site always renders. Keep in sync with server/src/data.ts.
 const id = "1tHwm79Tc7QPCrd1aOk9Dqk51rAgO4Drd";
 const id2 = "1j1xpsyWcl0oly5RFTqaQI4tKX_agII3r";
+const id3 = "1XZcPRwH3g_gVRC4kAF5Dor0OwWIxnjo-";
 
 export const fallback: SiteData = {
   profile: {
@@ -16,13 +17,21 @@ export const fallback: SiteData = {
   works: [{
     id: "w1", title: "UGC Ad Sample", category: "UGC video ad",
     videoUrl: `https://drive.google.com/file/d/${id}/view?usp=sharing`,
+    previewUrl: `https://drive.google.com/file/d/${id}/preview`,
     thumbnailUrl: `https://drive.google.com/thumbnail?id=${id}&sz=w800`,
     gradient: ["#1d4ed8", "#38bdf8"],
   }, {
     id: "w2", title: "UGC Ad Sample 2", category: "UGC video ad",
     videoUrl: `https://drive.google.com/file/d/${id2}/view?usp=sharing`,
+    previewUrl: `https://drive.google.com/file/d/${id2}/preview`,
     thumbnailUrl: `https://drive.google.com/thumbnail?id=${id2}&sz=w800`,
     gradient: ["#2f6bff", "#93c5fd"],
+  }, {
+    id: "w3", title: "UGC Ad Sample 3", category: "UGC video ad",
+    videoUrl: `https://drive.google.com/file/d/${id3}/view?usp=sharing`,
+    previewUrl: `https://drive.google.com/file/d/${id3}/preview`,
+    thumbnailUrl: `https://drive.google.com/thumbnail?id=${id3}&sz=w800`,
+    gradient: ["#1e40af", "#60a5fa"],
   }],
   plans: [
     {

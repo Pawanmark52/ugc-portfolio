@@ -3,7 +3,7 @@ export interface Profile {
   whatsapp: string; instagram: string; location: string; deliveryDays: number; skills: string[];
 }
 export interface WorkSample {
-  id: string; title: string; category: string; videoUrl: string; thumbnailUrl: string; gradient: string[];
+  id: string; title: string; category: string; videoUrl: string; previewUrl: string; thumbnailUrl: string; gradient: string[];
 }
 export interface Plan {
   name: string; badge: string | null; videos: number; priceUsd: number; originalPriceUsd: number | null; featured: boolean; pricePerVideo: number;

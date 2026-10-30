@@ -19,3 +19,6 @@ export function scrollToHash(hash: string) {
   if (lenis) lenis.scrollTo(hash === "#top" ? 0 : el, { offset: -90, duration: 1.4 });
   else el.scrollIntoView({ behavior: "smooth" });
 }
+
+export const stopScroll = () => lenis?.stop();
+export const startScroll = () => lenis?.start();
