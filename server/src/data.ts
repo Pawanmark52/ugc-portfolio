@@ -78,6 +78,13 @@ export const works: WorkSample[] = [
     driveFileId: "1XZcPRwH3g_gVRC4kAF5Dor0OwWIxnjo-",
     gradient: ["#1e40af", "#60a5fa"],
   },
+  {
+    id: "w4",
+    title: "UGC Ad Sample 4",
+    category: "UGC video ad",
+    driveFileId: "1_kwOgNmTk6y2E4sBnniVphYvZKuE5FCA",
+    gradient: ["#334155", "#94a3b8"],
+  },
 ];
 
 export const plans: Plan[] = [

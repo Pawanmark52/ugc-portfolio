@@ -5,6 +5,7 @@ import type { SiteData } from "./types";
 const id = "1tHwm79Tc7QPCrd1aOk9Dqk51rAgO4Drd";
 const id2 = "1j1xpsyWcl0oly5RFTqaQI4tKX_agII3r";
 const id3 = "1XZcPRwH3g_gVRC4kAF5Dor0OwWIxnjo-";
+const id4 = "1_kwOgNmTk6y2E4sBnniVphYvZKuE5FCA";
 
 export const fallback: SiteData = {
   profile: {
@@ -32,6 +33,12 @@ export const fallback: SiteData = {
     previewUrl: `https://drive.google.com/file/d/${id3}/preview`,
     thumbnailUrl: `https://drive.google.com/thumbnail?id=${id3}&sz=w800`,
     gradient: ["#1e40af", "#60a5fa"],
+  }, {
+    id: "w4", title: "UGC Ad Sample 4", category: "UGC video ad",
+    videoUrl: `https://drive.google.com/file/d/${id4}/view?usp=sharing`,
+    previewUrl: `https://drive.google.com/file/d/${id4}/preview`,
+    thumbnailUrl: `https://drive.google.com/thumbnail?id=${id4}&sz=w800`,
+    gradient: ["#334155", "#94a3b8"],
   }],
   plans: [
     {
