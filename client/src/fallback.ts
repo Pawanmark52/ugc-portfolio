@@ -15,7 +15,7 @@ export const fallback: SiteData = {
   profile: {
     name: "Growia", handle: "growia", tagline: "UGC ads that make people stop scrolling.",
     bio: "We're a UGC studio that knows what makes short-form video convert: a sharp hook, natural delivery and clean, fast editing. Brands get real-feeling content without the agency price tag.",
-    email: "growia.ae@gmail.com", phone: "+91 88246 24210", whatsapp: "918824624210",
+    email: "growia.ae@gmail.com", phone: "+971 50 455 0830", whatsapp: "971504550830",
     instagram: "growia.studio", location: "India", deliveryDays: 1,
     skills: ["UGC ads", "Hook writing", "Fast editing", "Reels / TikTok / Shorts", "Meta Ads ready"],
   },
