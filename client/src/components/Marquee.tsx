@@ -4,8 +4,9 @@ import { useCurrency } from "../lib/currency";
 const base = ["UGC ADS", "TIKTOK", "INSTAGRAM REELS", "META ADS", "YOUTUBE SHORTS", "2-DAY DELIVERY", "HOOK-FIRST SCRIPTS"];
 
 export function Marquee({ plans }: { plans: Plan[] }) {
-  const { fmt } = useCurrency();
-  const items = [...base, ...plans.map(p => `${p.videos} ${p.videos === 1 ? "VIDEO" : "VIDEOS"} · ${fmt(p.priceUsd)}`)];
+  const { money, ladder } = useCurrency();
+  const L = ladder(plans);
+  const items = [...base, ...plans.filter(p => L[p.name]).map(p => `${p.videos} ${p.videos === 1 ? "VIDEO" : "VIDEOS"} · ${money(L[p.name].total)}`)];
   const row = [...items, ...items];
   return (
     <div className="marq" aria-hidden="true">

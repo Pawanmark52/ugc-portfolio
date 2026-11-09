@@ -74,7 +74,7 @@ export const fallback: SiteData = {
       features: ["1 UGC video (15-45 sec)", "Custom hook and script", "Captions, music and editing included", "1 revision", "Delivery in 2 days"],
     },
     {
-      name: "3-Video Pack", badge: null, videos: 3, priceUsd: 42, originalPriceUsd: 48, featured: false, pricePerVideo: 14, deliveryDays: 2,
+      name: "3-Video Pack", badge: null, videos: 3, priceUsd: 44, originalPriceUsd: 48, featured: false, pricePerVideo: 14.67, deliveryDays: 2,
       features: ["3 UGC videos (15-45 sec each)", "Custom hook and script for every video", "Captions, music and editing included", "1 revision per video", "Delivery in 2 days"],
     },
     {

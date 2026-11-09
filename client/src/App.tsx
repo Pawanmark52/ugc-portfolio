@@ -19,11 +19,12 @@ import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 
 function Site() {
-  const { fmt } = useCurrency();
+  const { money, ladder } = useCurrency();
   const { data } = useQuery<SiteData>(SITE_QUERY);
   const site = data ?? fallback;
   const { profile } = site;
   const plan = site.plans.find(p => p.videos === 5) ?? site.plans[0];
+  const Lp = plan ? ladder(site.plans)[plan.name] : undefined;
   const wa = `https://wa.me/${profile.whatsapp}?text=${encodeURIComponent("Hi Growia, I want the 5 UGC video pack")}`;
 
   useEffect(() => {
@@ -42,7 +43,7 @@ function Site() {
     <>
       <Navbar />
       <main>
-        <Hero profile={profile} plan={plan} />
+        <Hero profile={profile} plan={plan} plans={site.plans} />
         <Marquee plans={site.plans} />
         <Work works={site.works} />
         <Services services={site.services} />
@@ -54,7 +55,7 @@ function Site() {
         <Contact profile={profile} plans={site.plans} />
       </main>
       <Footer name={profile.name} />
-      <div className="sticky"><a className="btn" href={wa} target="_blank" rel="noopener noreferrer">Order {plan?.videos ?? 5} videos · {fmt(plan?.priceUsd ?? 69)}{plan?.originalPriceUsd ? <s> {fmt(plan.originalPriceUsd)}</s> : null}</a></div>
+      <div className="sticky"><a className="btn" href={wa} target="_blank" rel="noopener noreferrer">Order {plan?.videos ?? 5} videos · {money(Lp?.total ?? 69)}{Lp?.original ? <s> {money(Lp.original)}</s> : null}</a></div>
     </>
   );
 }

@@ -136,7 +136,7 @@ export const plans: Plan[] = [
     name: "3-Video Pack",
     badge: null,
     videos: 3,
-    priceUsd: 42,
+    priceUsd: 44,
     originalPriceUsd: 48,
     featured: false,
     deliveryDays: 2,
