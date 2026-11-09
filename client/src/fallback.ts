@@ -8,6 +8,7 @@ const id3 = "1XZcPRwH3g_gVRC4kAF5Dor0OwWIxnjo-";
 const id4 = "1_kwOgNmTk6y2E4sBnniVphYvZKuE5FCA";
 const id5 = "1dxq4bikaSW0zbpuVKJ46Fleaa5sbwaV4";
 const id6 = "1mNDpSqeWmd378KFbNTwycu5_5RCpzmli";
+const id8 = "1ERWQkksP0FuHK_8DM7l5KVpPHHItKV3h";
 const id7 = "17okHyacXpORmiVyTX_KnC3CSQvv7tLs0";
 
 export const fallback: SiteData = {
@@ -20,42 +21,48 @@ export const fallback: SiteData = {
   },
   works: [{
     id: "w1", title: "UGC Ad Sample 1", category: "UGC video ad",
+    videoUrl: `https://drive.google.com/file/d/${id8}/view?usp=sharing`,
+    previewUrl: `https://drive.google.com/file/d/${id8}/preview`,
+    thumbnailUrl: `https://drive.google.com/thumbnail?id=${id8}&sz=w800`,
+    gradient: ["#71717a", "#f4f4f5"],
+  }, {
+    id: "w2", title: "UGC Ad Sample 2", category: "UGC video ad",
     videoUrl: `https://drive.google.com/file/d/${id7}/view?usp=sharing`,
     previewUrl: `https://drive.google.com/file/d/${id7}/preview`,
     thumbnailUrl: `https://drive.google.com/thumbnail?id=${id7}&sz=w800`,
     gradient: ["#52525b", "#e4e4e7"],
   }, {
-    id: "w2", title: "UGC Ad Sample 2", category: "UGC video ad",
+    id: "w3", title: "UGC Ad Sample 3", category: "UGC video ad",
     videoUrl: `https://drive.google.com/file/d/${id6}/view?usp=sharing`,
     previewUrl: `https://drive.google.com/file/d/${id6}/preview`,
     thumbnailUrl: `https://drive.google.com/thumbnail?id=${id6}&sz=w800`,
     gradient: ["#3f3f46", "#d4d4d8"],
   }, {
-    id: "w3", title: "UGC Ad Sample 3", category: "UGC video ad",
+    id: "w4", title: "UGC Ad Sample 4", category: "UGC video ad",
     videoUrl: `https://drive.google.com/file/d/${id5}/view?usp=sharing`,
     previewUrl: `https://drive.google.com/file/d/${id5}/preview`,
     thumbnailUrl: `https://drive.google.com/thumbnail?id=${id5}&sz=w800`,
     gradient: ["#475569", "#cbd5e1"],
   }, {
-    id: "w4", title: "UGC Ad Sample 4", category: "UGC video ad",
+    id: "w5", title: "UGC Ad Sample 5", category: "UGC video ad",
     videoUrl: `https://drive.google.com/file/d/${id4}/view?usp=sharing`,
     previewUrl: `https://drive.google.com/file/d/${id4}/preview`,
     thumbnailUrl: `https://drive.google.com/thumbnail?id=${id4}&sz=w800`,
     gradient: ["#334155", "#94a3b8"],
   }, {
-    id: "w5", title: "UGC Ad Sample 5", category: "UGC video ad",
+    id: "w6", title: "UGC Ad Sample 6", category: "UGC video ad",
     videoUrl: `https://drive.google.com/file/d/${id3}/view?usp=sharing`,
     previewUrl: `https://drive.google.com/file/d/${id3}/preview`,
     thumbnailUrl: `https://drive.google.com/thumbnail?id=${id3}&sz=w800`,
     gradient: ["#1e40af", "#60a5fa"],
   }, {
-    id: "w6", title: "UGC Ad Sample 6", category: "UGC video ad",
+    id: "w7", title: "UGC Ad Sample 7", category: "UGC video ad",
     videoUrl: `https://drive.google.com/file/d/${id2}/view?usp=sharing`,
     previewUrl: `https://drive.google.com/file/d/${id2}/preview`,
     thumbnailUrl: `https://drive.google.com/thumbnail?id=${id2}&sz=w800`,
     gradient: ["#2f6bff", "#93c5fd"],
   }, {
-    id: "w7", title: "UGC Ad Sample 7", category: "UGC video ad",
+    id: "w8", title: "UGC Ad Sample 8", category: "UGC video ad",
     videoUrl: `https://drive.google.com/file/d/${id}/view?usp=sharing`,
     previewUrl: `https://drive.google.com/file/d/${id}/preview`,
     thumbnailUrl: `https://drive.google.com/thumbnail?id=${id}&sz=w800`,
