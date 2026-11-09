@@ -23,8 +23,8 @@ const visuals: Record<string, JSX.Element> = {
   "Platform-ready": (
     <div className="viz plats"><span>TikTok</span><span>Reels</span><span>Shorts</span><span>Meta</span><span>9:16 HD</span></div>
   ),
-  "2-day delivery": (
-    <div className="viz ring"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" /><circle className="arc" cx="50" cy="50" r="40" /></svg><b>48h</b></div>
+  "Fast delivery": (
+    <div className="viz ring"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" /><circle className="arc" cx="50" cy="50" r="40" /></svg><b>1-4d</b></div>
   ),
   "Testimonial style": (
     <div className="viz stars"><div>★★★★★</div><p>"Honestly obsessed."</p></div>

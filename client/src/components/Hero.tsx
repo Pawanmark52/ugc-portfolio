@@ -37,7 +37,7 @@ export function Hero({ profile, plan, plans }: { profile: Profile; plan?: Plan; 
             UGC ads that make people <span className="silver">stop scrolling</span>.
           </motion.h1>
           <motion.p className="lead" initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.35 }}>
-            We create authentic, high-converting UGC video ads for TikTok, Instagram Reels and Meta Ads. Script, filming, edit and captions, all handled. Delivered in {profile.deliveryDays} days.
+            We create authentic, high-converting UGC video ads for TikTok, Instagram Reels and Meta Ads. Script, filming, edit and captions, all handled. Delivery from {profile.deliveryDays} day.
           </motion.p>
           <motion.div className="cta" initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.5 }}>
             <a href="#pricing" className="btn">Get {plan?.videos ?? 5} videos for {money(total)} <s>{money(original)}</s> <span>→</span></a>
@@ -45,7 +45,7 @@ export function Hero({ profile, plan, plans }: { profile: Profile; plan?: Plan; 
           </motion.div>
           <motion.div className="hero-stats glass" initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.65 }}>
             <div><b>{plan?.videos ?? 5}</b><span>videos per pack</span></div>
-            <div><b>{profile.deliveryDays} days</b><span>delivery</span></div>
+            <div><b>1-4 days</b><span>delivery</span></div>
             <div><b>{money(per)}</b><span>per video</span></div>
           </motion.div>
         </motion.div>
@@ -58,7 +58,7 @@ export function Hero({ profile, plan, plans }: { profile: Profile; plan?: Plan; 
             <PhoneStack handle={profile.handle} />
           </motion.div>
           <div className="chip glass c1"><small>Every video</small><b>🪝 Hook-first script</b></div>
-          <div className="chip glass c2"><small>Delivery</small><b>⚡ {profile.deliveryDays} days</b></div>
+          <div className="chip glass c2"><small>Delivery</small><b>⚡ From {profile.deliveryDays} day</b></div>
           <div className="chip glass c3"><small>Per pack</small><b>🎬 {plan?.videos ?? 5} videos</b></div>
         </div>
       </div>

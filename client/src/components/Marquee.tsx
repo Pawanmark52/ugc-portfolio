@@ -1,7 +1,7 @@
 import type { Plan } from "../types";
 import { useCurrency } from "../lib/currency";
 
-const base = ["UGC ADS", "TIKTOK", "INSTAGRAM REELS", "META ADS", "YOUTUBE SHORTS", "2-DAY DELIVERY", "HOOK-FIRST SCRIPTS"];
+const base = ["UGC ADS", "TIKTOK", "INSTAGRAM REELS", "META ADS", "YOUTUBE SHORTS", "1-4 DAY DELIVERY", "HOOK-FIRST SCRIPTS"];
 
 export function Marquee({ plans }: { plans: Plan[] }) {
   const { money, ladder } = useCurrency();
