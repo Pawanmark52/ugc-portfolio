@@ -7,6 +7,6 @@ export const SITE_QUERY = gql`
     plans { name badge videos priceUsd originalPriceUsd featured pricePerVideo deliveryDays features }
     services { icon title description }
     faqs { question answer }
-    addons { name price }
+    addons { name priceUsd perVideo }
   }
 `;

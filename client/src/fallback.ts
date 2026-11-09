@@ -70,19 +70,19 @@ export const fallback: SiteData = {
   }],
   plans: [
     {
-      name: "Single Video", badge: null, videos: 1, priceUsd: 13, originalPriceUsd: null, featured: false, pricePerVideo: 13, deliveryDays: 2,
+      name: "Single Video", badge: null, videos: 1, priceUsd: 29, originalPriceUsd: null, featured: false, pricePerVideo: 29, deliveryDays: 2,
       features: ["1 UGC video (15-45 sec)", "Custom hook and script", "Captions, music and editing included", "1 revision", "Delivery in 2 days"],
     },
     {
-      name: "3-Video Pack", badge: null, videos: 3, priceUsd: 36, originalPriceUsd: 39, featured: false, pricePerVideo: 12, deliveryDays: 2,
+      name: "3-Video Pack", badge: null, videos: 3, priceUsd: 79, originalPriceUsd: 87, featured: false, pricePerVideo: 26.33, deliveryDays: 2,
       features: ["3 UGC videos (15-45 sec each)", "Custom hook and script for every video", "Captions, music and editing included", "1 revision per video", "Delivery in 2 days"],
     },
     {
-      name: "5-Video Pack", badge: "MOST POPULAR · SAVE $15", videos: 5, priceUsd: 50, originalPriceUsd: 65, featured: true, pricePerVideo: 10, deliveryDays: 2,
+      name: "5-Video Pack", badge: "MOST POPULAR", videos: 5, priceUsd: 119, originalPriceUsd: 145, featured: true, pricePerVideo: 23.8, deliveryDays: 2,
       features: ["5 UGC videos (15-45 sec each)", "Custom hook and script for every video", "Captions, music and editing included", "1 revision per video", "Bonus: free 2nd hook for 1 video", "Delivery in 2 days"],
     },
     {
-      name: "10-Video Pack", badge: "BEST VALUE · SAVE $40", videos: 10, priceUsd: 90, originalPriceUsd: 130, featured: false, pricePerVideo: 9, deliveryDays: 2,
+      name: "10-Video Pack", badge: "BEST VALUE", videos: 10, priceUsd: 219, originalPriceUsd: 290, featured: false, pricePerVideo: 21.9, deliveryDays: 2,
       features: ["10 UGC videos (15-45 sec each)", "Custom hook and script for every video", "Captions, music and editing included", "1 revision per video", "Bonus: free extra hook variation of your best video", "First videos delivered in 2 days"],
     },
   ],
@@ -95,10 +95,10 @@ export const fallback: SiteData = {
     { icon: "⚡", title: "2-day delivery", description: "Fast turnaround so you can launch campaigns this week." },
   ],
   addons: [
-    { name: "Rush delivery (24 hours)", price: "+$10" },
-    { name: "Extra revision", price: "+$3 / video" },
-    { name: "Extra hook variation", price: "+$5" },
-    { name: "Raw footage files", price: "+$5" },
+    { name: "Rush delivery (24 hours)", priceUsd: 15, perVideo: false },
+    { name: "Extra revision", priceUsd: 5, perVideo: true },
+    { name: "Extra hook variation", priceUsd: 8, perVideo: false },
+    { name: "Raw footage files", priceUsd: 8, perVideo: false },
   ],
   faqs: [
     { question: "Do I need to ship the product to you?", answer: "For digital products, apps and services no shipping is needed. For physical products we'll discuss options before ordering." },

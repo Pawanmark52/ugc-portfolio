@@ -46,7 +46,8 @@ export const typeDefs = `#graphql
 
   type Addon {
     name: String!
-    price: String!
+    priceUsd: Int!
+    perVideo: Boolean!
   }
 
   type Faq {

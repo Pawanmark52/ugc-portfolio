@@ -120,7 +120,7 @@ export const plans: Plan[] = [
     name: "Single Video",
     badge: null,
     videos: 1,
-    priceUsd: 13,
+    priceUsd: 29,
     originalPriceUsd: null,
     featured: false,
     deliveryDays: 2,
@@ -136,8 +136,8 @@ export const plans: Plan[] = [
     name: "3-Video Pack",
     badge: null,
     videos: 3,
-    priceUsd: 36,
-    originalPriceUsd: 39,
+    priceUsd: 79,
+    originalPriceUsd: 87,
     featured: false,
     deliveryDays: 2,
     features: [
@@ -150,10 +150,10 @@ export const plans: Plan[] = [
   },
   {
     name: "5-Video Pack",
-    badge: "MOST POPULAR · SAVE $15",
+    badge: "MOST POPULAR",
     videos: 5,
-    priceUsd: 50,
-    originalPriceUsd: 65,
+    priceUsd: 119,
+    originalPriceUsd: 145,
     featured: true,
     deliveryDays: 2,
     features: [
@@ -167,10 +167,10 @@ export const plans: Plan[] = [
   },
   {
     name: "10-Video Pack",
-    badge: "BEST VALUE · SAVE $40",
+    badge: "BEST VALUE",
     videos: 10,
-    priceUsd: 90,
-    originalPriceUsd: 130,
+    priceUsd: 219,
+    originalPriceUsd: 290,
     featured: false,
     deliveryDays: 2,
     features: [
@@ -184,11 +184,12 @@ export const plans: Plan[] = [
   },
 ];
 
+
 export const addons = [
-  { name: "Rush delivery (24 hours)", price: "+$10" },
-  { name: "Extra revision", price: "+$3 / video" },
-  { name: "Extra hook variation", price: "+$5" },
-  { name: "Raw footage files", price: "+$5" },
+  { name: "Rush delivery (24 hours)", priceUsd: 15, perVideo: false },
+  { name: "Extra revision", priceUsd: 5, perVideo: true },
+  { name: "Extra hook variation", priceUsd: 8, perVideo: false },
+  { name: "Raw footage files", priceUsd: 8, perVideo: false },
 ];
 
 

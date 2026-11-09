@@ -10,7 +10,7 @@ export interface Plan {
   deliveryDays: number; features: string[];
 }
 export interface Service { icon: string; title: string; description: string }
-export interface Addon { name: string; price: string }
+export interface Addon { name: string; priceUsd: number; perVideo: boolean }
 export interface Faq { question: string; answer: string }
 
 export interface SiteData {

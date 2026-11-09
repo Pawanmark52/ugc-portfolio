@@ -4,6 +4,7 @@ import { SITE_QUERY } from "./graphql";
 import { fallback } from "./fallback";
 import type { SiteData } from "./types";
 import { initLenis, scrollToHash } from "./lib/lenis";
+import { CurrencyProvider, useCurrency } from "./lib/currency";
 import { Navbar } from "./components/Navbar";
 import { Hero } from "./components/Hero";
 import { Marquee } from "./components/Marquee";
@@ -17,7 +18,8 @@ import { Faq } from "./components/Faq";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 
-export default function App() {
+function Site() {
+  const { fmt } = useCurrency();
   const { data } = useQuery<SiteData>(SITE_QUERY);
   const site = data ?? fallback;
   const { profile } = site;
@@ -41,7 +43,7 @@ export default function App() {
       <Navbar />
       <main>
         <Hero profile={profile} plan={plan} />
-        <Marquee />
+        <Marquee plans={site.plans} />
         <Work works={site.works} />
         <Services services={site.services} />
         <Process days={profile.deliveryDays} />
@@ -49,10 +51,18 @@ export default function App() {
         <Pricing plans={site.plans} addons={site.addons} />
         <Reviews />
         <Faq faqs={site.faqs} />
-        <Contact profile={profile} />
+        <Contact profile={profile} plans={site.plans} />
       </main>
       <Footer name={profile.name} />
-      <div className="sticky"><a className="btn" href={wa} target="_blank" rel="noopener noreferrer">Order {plan?.videos ?? 5} videos · ${plan?.priceUsd ?? 50}{plan?.originalPriceUsd ? <s> ${plan.originalPriceUsd}</s> : null}</a></div>
+      <div className="sticky"><a className="btn" href={wa} target="_blank" rel="noopener noreferrer">Order {plan?.videos ?? 5} videos · {fmt(plan?.priceUsd ?? 119)}{plan?.originalPriceUsd ? <s> {fmt(plan.originalPriceUsd)}</s> : null}</a></div>
     </>
+  );
+}
+
+export default function App() {
+  return (
+    <CurrencyProvider>
+      <Site />
+    </CurrencyProvider>
   );
 }

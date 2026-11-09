@@ -1,5 +1,5 @@
 import { FormEvent, useState } from "react";
-import type { Profile } from "../types";
+import type { Plan, Profile } from "../types";
 import { Glass, Reveal } from "./ui";
 
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL ?? "https://tvigxppfhpglzxawevqo.supabase.co";
@@ -15,8 +15,10 @@ async function sendLead(lead: { name: string; email: string; product: string | n
   if (!res.ok) throw new Error(res.status === 400 ? "Please check your details and try again." : "Couldn't send right now. Please use WhatsApp or email.");
 }
 
-export function Contact({ profile }: { profile: Profile }) {
-  const [form, setForm] = useState({ name: "", email: "", product: "", message: "", plan: "5-Video Pack ($50)" });
+export function Contact({ profile, plans }: { profile: Profile; plans: Plan[] }) {
+  const label = (p: Plan) => `${p.name} ($${p.priceUsd})`;
+  const defaultPlan = plans.find(p => p.featured) ?? plans[0];
+  const [form, setForm] = useState({ name: "", email: "", product: "", message: "", plan: defaultPlan ? label(defaultPlan) : "" });
   const [status, setStatus] = useState<"idle" | "loading" | "done">("idle");
   const [error, setError] = useState("");
   const set = (k: keyof typeof form) => (e: { target: { value: string } }) => setForm(f => ({ ...f, [k]: e.target.value }));
@@ -57,10 +59,7 @@ export function Contact({ profile }: { profile: Profile }) {
               <input required placeholder="Your name" value={form.name} onChange={set("name")} maxLength={100} />
               <input required type="email" placeholder="Email" value={form.email} onChange={set("email")} />
               <select className="full" value={form.plan} onChange={set("plan")} aria-label="Package">
-                <option>5-Video Pack ($50)</option>
-                <option>Single Video ($13)</option>
-                <option>3-Video Pack ($36)</option>
-                <option>10-Video Pack ($90)</option>
+                {plans.map(p => <option key={p.name}>{label(p)}</option>)}
               </select>
               <input className="full" placeholder="Product / brand link (optional)" value={form.product} onChange={set("product")} />
               <textarea className="full" required minLength={5} rows={5} placeholder="Tell us about your product and what you want" value={form.message} onChange={set("message")} />
