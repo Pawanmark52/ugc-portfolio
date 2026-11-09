@@ -5,8 +5,7 @@ import { CURRENCIES, useCurrency, type Price } from "../lib/currency";
 import { Glass, Reveal, SectionHead } from "./ui";
 
 function CurrencyPicker() {
-  const { code, setCode, live, updated, rate } = useCurrency();
-  const when = updated ? new Date(updated).toLocaleDateString(undefined, { day: "numeric", month: "short" }) : null;
+  const { code, setCode } = useCurrency();
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -41,11 +40,6 @@ function CurrencyPicker() {
           )}
         </AnimatePresence>
       </div>
-      <small>
-        {code === "USD"
-          ? "Prices are in US dollars."
-          : `${live ? "Live rate" : "Approximate rate"}: 1 USD = ${rate.toFixed(2)} ${code}${live && when ? ` (updated ${when})` : ""}. The final amount is confirmed when you order.`}
-      </small>
     </div>
   );
 }
