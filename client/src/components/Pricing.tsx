@@ -1,19 +1,46 @@
+import { useEffect, useRef, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import type { Addon, Plan } from "../types";
 import { CURRENCIES, useCurrency } from "../lib/currency";
 import { Glass, Reveal, SectionHead } from "./ui";
 
 function CurrencyPicker() {
   const { code, setCode, live } = useCurrency();
+  const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!open) return;
+    const onDown = (e: MouseEvent) => { if (!ref.current?.contains(e.target as Node)) setOpen(false); };
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") setOpen(false); };
+    document.addEventListener("mousedown", onDown);
+    document.addEventListener("keydown", onKey);
+    return () => { document.removeEventListener("mousedown", onDown); document.removeEventListener("keydown", onKey); };
+  }, [open]);
+
+  const current = CURRENCIES[code];
   return (
-    <div className="cur glass">
-      <label htmlFor="cur">Show prices in</label>
-      <div className="cur-select">
-        <span>{CURRENCIES[code]?.flag}</span>
-        <select id="cur" value={code} onChange={e => setCode(e.target.value)}>
-          {Object.entries(CURRENCIES).map(([c, i]) => <option key={c} value={c}>{c} · {i.label}</option>)}
-        </select>
+    <div className="cur glass" ref={ref}>
+      <span className="cur-label">Show prices in</span>
+      <div className="cur-dd">
+        <button type="button" className="cur-btn" aria-haspopup="listbox" aria-expanded={open} onClick={() => setOpen(o => !o)}>
+          <span className="flag">{current?.flag}</span><b>{code}</b><em>{current?.label}</em><i className={open ? "up" : ""}>▾</i>
+        </button>
+        <AnimatePresence>
+          {open && (
+            <motion.ul role="listbox" className="cur-panel glass" initial={{ opacity: 0, y: -8, scale: 0.97 }} animate={{ opacity: 1, y: 0, scale: 1 }} exit={{ opacity: 0, y: -8, scale: 0.97 }} transition={{ duration: 0.22, ease: [0.2, 0.7, 0.2, 1] }}>
+              {Object.entries(CURRENCIES).map(([c, info]) => (
+                <li key={c} role="option" aria-selected={c === code}>
+                  <button type="button" className={c === code ? "on" : ""} onClick={() => { setCode(c); setOpen(false); }}>
+                    <span className="flag">{info.flag}</span><b>{c}</b><em>{info.label}</em>{c === code && <span className="tick">✓</span>}
+                  </button>
+                </li>
+              ))}
+            </motion.ul>
+          )}
+        </AnimatePresence>
       </div>
-      <small>{code === "USD" ? "Prices are in US dollars." : `Approximate ${live ? "live" : ""} conversion from USD. The final amount is confirmed when you order.`}</small>
+      <small>{code === "USD" ? "Prices are in US dollars." : `Approximate ${live ? "live " : ""}conversion from USD. The final amount is confirmed when you order.`}</small>
     </div>
   );
 }
@@ -49,7 +76,6 @@ export function Pricing({ plans, addons }: { plans: Plan[]; addons: Addon[] }) {
     <section id="pricing">
       <div className="wrap center">
         <SectionHead center eyebrow="Pricing" title={<>The more you order, <span className="silver">the less you pay</span></>} sub="No monthly contracts. Start with one video, or grab a pack and pay less per video." />
-        <Reveal><CurrencyPicker /></Reveal>
         {single && pack && (
           <Reveal className="offer glass">
             <span className="flame">🔥</span>
@@ -57,6 +83,7 @@ export function Pricing({ plans, addons }: { plans: Plan[]; addons: Addon[] }) {
             <a href="#contact" className="btn btn-sm">Get the offer</a>
           </Reveal>
         )}
+        <Reveal className="cur-wrap"><CurrencyPicker /></Reveal>
         <div className="plans">
           {plans.map((p, i) => <Card key={p.name} p={p} delay={i * 0.08} />)}
         </div>

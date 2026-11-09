@@ -70,19 +70,19 @@ export const fallback: SiteData = {
   }],
   plans: [
     {
-      name: "Single Video", badge: null, videos: 1, priceUsd: 19, originalPriceUsd: null, featured: false, pricePerVideo: 19, deliveryDays: 2,
+      name: "Single Video", badge: null, videos: 1, priceUsd: 16, originalPriceUsd: null, featured: false, pricePerVideo: 16, deliveryDays: 2,
       features: ["1 UGC video (15-45 sec)", "Custom hook and script", "Captions, music and editing included", "1 revision", "Delivery in 2 days"],
     },
     {
-      name: "3-Video Pack", badge: null, videos: 3, priceUsd: 49, originalPriceUsd: 57, featured: false, pricePerVideo: 16.33, deliveryDays: 2,
+      name: "3-Video Pack", badge: null, videos: 3, priceUsd: 42, originalPriceUsd: 48, featured: false, pricePerVideo: 14, deliveryDays: 2,
       features: ["3 UGC videos (15-45 sec each)", "Custom hook and script for every video", "Captions, music and editing included", "1 revision per video", "Delivery in 2 days"],
     },
     {
-      name: "5-Video Pack", badge: "MOST POPULAR", videos: 5, priceUsd: 79, originalPriceUsd: 95, featured: true, pricePerVideo: 15.8, deliveryDays: 2,
+      name: "5-Video Pack", badge: "MOST POPULAR", videos: 5, priceUsd: 69, originalPriceUsd: 80, featured: true, pricePerVideo: 13.8, deliveryDays: 2,
       features: ["5 UGC videos (15-45 sec each)", "Custom hook and script for every video", "Captions, music and editing included", "1 revision per video", "Bonus: free 2nd hook for 1 video", "Delivery in 2 days"],
     },
     {
-      name: "10-Video Pack", badge: "BEST VALUE", videos: 10, priceUsd: 139, originalPriceUsd: 190, featured: false, pricePerVideo: 13.9, deliveryDays: 2,
+      name: "10-Video Pack", badge: "BEST VALUE", videos: 10, priceUsd: 119, originalPriceUsd: 160, featured: false, pricePerVideo: 11.9, deliveryDays: 2,
       features: ["10 UGC videos (15-45 sec each)", "Custom hook and script for every video", "Captions, music and editing included", "1 revision per video", "Bonus: free extra hook variation of your best video", "First videos delivered in 2 days"],
     },
   ],
