@@ -48,14 +48,17 @@ interface Ctx {
   setCode: (c: string) => void;
   fmt: (usd: number) => string;
   live: boolean;
+  updated: string | null;
+  rate: number;
 }
 
-const CurrencyCtx = createContext<Ctx>({ code: "USD", setCode: () => {}, fmt: v => `$${v}`, live: false });
+const CurrencyCtx = createContext<Ctx>({ code: "USD", setCode: () => {}, fmt: v => `$${v}`, live: false, updated: null, rate: 1 });
 
 export function CurrencyProvider({ children }: { children: ReactNode }) {
   const [code, setCodeState] = useState<string>(detect);
   const [rates, setRates] = useState<Record<string, number>>(FALLBACK);
   const [live, setLive] = useState(false);
+  const [updated, setUpdated] = useState<string | null>(null);
 
   useEffect(() => {
     const ctrl = new AbortController();
@@ -68,6 +71,7 @@ export function CurrencyProvider({ children }: { children: ReactNode }) {
         for (const c of Object.keys(CURRENCIES)) next[c] = typeof d.rates[c] === "number" ? d.rates[c] : FALLBACK[c];
         setRates(next);
         setLive(true);
+        if (d.time_last_update_utc) setUpdated(String(d.time_last_update_utc));
       })
       .catch(() => { /* keep fallback rates */ })
       .finally(() => clearTimeout(t));
@@ -80,6 +84,8 @@ export function CurrencyProvider({ children }: { children: ReactNode }) {
     return {
       code,
       live,
+      updated,
+      rate,
       setCode: c => {
         setCodeState(c);
         try { localStorage.setItem(KEY, c); } catch { /* ignore */ }
@@ -95,7 +101,7 @@ export function CurrencyProvider({ children }: { children: ReactNode }) {
         }).format(code === "USD" ? v : Math.round(v));
       },
     };
-  }, [code, rates, live]);
+  }, [code, rates, live, updated]);
 
   return <CurrencyCtx.Provider value={value}>{children}</CurrencyCtx.Provider>;
 }
