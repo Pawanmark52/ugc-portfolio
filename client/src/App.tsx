@@ -54,7 +54,7 @@ function Site() {
         <Contact profile={profile} plans={site.plans} />
       </main>
       <Footer name={profile.name} />
-      <div className="sticky"><a className="btn" href={wa} target="_blank" rel="noopener noreferrer">Order {plan?.videos ?? 5} videos · {fmt(plan?.priceUsd ?? 119)}{plan?.originalPriceUsd ? <s> {fmt(plan.originalPriceUsd)}</s> : null}</a></div>
+      <div className="sticky"><a className="btn" href={wa} target="_blank" rel="noopener noreferrer">Order {plan?.videos ?? 5} videos · {fmt(plan?.priceUsd ?? 79)}{plan?.originalPriceUsd ? <s> {fmt(plan.originalPriceUsd)}</s> : null}</a></div>
     </>
   );
 }
