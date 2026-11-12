@@ -56,64 +56,45 @@ export const profile: Profile = {
   skills: ["UGC ads", "Hook writing", "Fast editing", "Reels / TikTok / Shorts", "Meta Ads ready"],
 };
 
-export const works: WorkSample[] = [
-  {
-    id: "w1",
-    title: "UGC Ad Sample 1",
-    category: "UGC video ad",
-    driveFileId: "1ERWQkksP0FuHK_8DM7l5KVpPHHItKV3h",
-    gradient: ["#71717a", "#f4f4f5"],
-  },
-  {
-    id: "w2",
-    title: "UGC Ad Sample 2",
-    category: "UGC video ad",
-    driveFileId: "17okHyacXpORmiVyTX_KnC3CSQvv7tLs0",
-    gradient: ["#52525b", "#e4e4e7"],
-  },
-  {
-    id: "w3",
-    title: "UGC Ad Sample 3",
-    category: "UGC video ad",
-    driveFileId: "1mNDpSqeWmd378KFbNTwycu5_5RCpzmli",
-    gradient: ["#3f3f46", "#d4d4d8"],
-  },
-  {
-    id: "w4",
-    title: "UGC Ad Sample 4",
-    category: "UGC video ad",
-    driveFileId: "1dxq4bikaSW0zbpuVKJ46Fleaa5sbwaV4",
-    gradient: ["#475569", "#cbd5e1"],
-  },
-  {
-    id: "w5",
-    title: "UGC Ad Sample 5",
-    category: "UGC video ad",
-    driveFileId: "1_kwOgNmTk6y2E4sBnniVphYvZKuE5FCA",
-    gradient: ["#334155", "#94a3b8"],
-  },
-  {
-    id: "w6",
-    title: "UGC Ad Sample 6",
-    category: "UGC video ad",
-    driveFileId: "1XZcPRwH3g_gVRC4kAF5Dor0OwWIxnjo-",
-    gradient: ["#1e40af", "#60a5fa"],
-  },
-  {
-    id: "w7",
-    title: "UGC Ad Sample 7",
-    category: "UGC video ad",
-    driveFileId: "1j1xpsyWcl0oly5RFTqaQI4tKX_agII3r",
-    gradient: ["#2f6bff", "#93c5fd"],
-  },
-  {
-    id: "w8",
-    title: "UGC Ad Sample 8",
-    category: "UGC video ad",
-    driveFileId: "1tHwm79Tc7QPCrd1aOk9Dqk51rAgO4Drd",
-    gradient: ["#1d4ed8", "#38bdf8"],
-  },
+const driveIds = [
+  "1LXtijoC3jaNrFRWHCL6WzitOwvAcDjTG",
+  "19ppUva18ko87EKPmyNgaB22dlY6hG9UR",
+  "1nsEvi-GfFnaBMc_wcH7v8Yh-RLnp1Sum",
+  "1hpRcGRIriq2Op7Ue2OffGfLRDSvSjy3r",
+  "1D4RST1tlIt1R8JsWTyEBYZM3pjs6-8c0",
+  "1aJysOa6ZZNwJHBKk-SYmY-rE-yg2ohMV",
+  "10KTwR2uzxauVW9OsNBFfjtEqNfXe9OT6",
+  "1fbR5wfDgMJ_8tHUmJwYt2Ba919oVK902",
+  "1eEq_STRxKG4XxFt1eI3vWpQriQfYO0CO",
+  "1N9clhUwM6Xmtx8SYM7GwFc9peiELH4z_",
+  "1zMrf0Aj9An2FinO2B0MbKrqq14cSRQTq",
+  "1xLTmXD9pGlmT1v7jm25vPUSY2TiIjRvq",
+  "1ERWQkksP0FuHK_8DM7l5KVpPHHItKV3h",
+  "17okHyacXpORmiVyTX_KnC3CSQvv7tLs0",
+  "1mNDpSqeWmd378KFbNTwycu5_5RCpzmli",
+  "1dxq4bikaSW0zbpuVKJ46Fleaa5sbwaV4",
+  "1_kwOgNmTk6y2E4sBnniVphYvZKuE5FCA",
+  "1XZcPRwH3g_gVRC4kAF5Dor0OwWIxnjo-",
+  "1j1xpsyWcl0oly5RFTqaQI4tKX_agII3r",
+  "1tHwm79Tc7QPCrd1aOk9Dqk51rAgO4Drd",
 ];
+
+const gradients: [string, string][] = [
+  ["#52525b", "#e4e4e7"],
+  ["#3f3f46", "#d4d4d8"],
+  ["#475569", "#cbd5e1"],
+  ["#334155", "#94a3b8"],
+];
+
+// Newest first. Add a new video by putting its Google Drive file ID at the top of driveIds.
+export const works: WorkSample[] = driveIds.map((driveFileId, i) => ({
+  id: `w${i + 1}`,
+  title: `UGC Ad Sample ${i + 1}`,
+  category: "UGC video ad",
+  driveFileId,
+  gradient: gradients[i % gradients.length],
+}));
+
 
 export const plans: Plan[] = [
   {
