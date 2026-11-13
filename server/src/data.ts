@@ -47,7 +47,7 @@ export const profile: Profile = {
   handle: "growia",
   tagline: "UGC ads that make people stop scrolling.",
   bio: "We're a UGC studio that knows what makes short-form video convert: a sharp hook, natural delivery and clean, fast editing. Brands get real-feeling content without the agency price tag.",
-  email: "growia.ae@gmail.com",
+  email: "hello@growia.live",
   phone: "+971 50 978 8191",
   whatsapp: "971509788191",
   instagram: "growia.studio",
