@@ -62,18 +62,35 @@ function Player({ w, index, total, onClose, onStep }: { w: WorkSample; index: nu
   );
 }
 
-export function Work({ works }: { works: WorkSample[] }) {
+const ALL = "All";
+
+export function Work({ allWorks }: { allWorks: WorkSample[] }) {
+  const [cat, setCat] = useState(ALL);
   const [active, setActive] = useState<number | null>(null);
   const [showAll, setShowAll] = useState(false);
+
+  // Categories in the order they first appear; the tabs only show when there is more than one.
+  const categories = Array.from(new Set(allWorks.map(w => w.category)));
+  const works = cat === ALL ? allWorks : allWorks.filter(w => w.category === cat);
   const shown = showAll ? works : works.slice(0, INITIAL);
   const step = (d: number) => setActive(a => (a === null ? a : (a + d + works.length) % works.length));
   const close = () => setActive(null);
+  const pick = (c: string) => { setCat(c); setShowAll(false); };
 
   return (
     <section id="work">
       <div className="wrap">
-        <SectionHead eyebrow="Our work" title={<>Recent <span className="silver">UGC ads</span></>} sub={`${works.length} sample videos. Tap one to play it right here.`} />
-        <div className="work">
+        <SectionHead eyebrow="Our work" title={<>Recent <span className="silver">UGC ads</span></>} sub={`${works.length} sample videos${cat === ALL ? "" : ` in ${cat}`}. Tap one to play it right here.`} />
+        {categories.length > 1 && (
+          <div className="cats" role="tablist" aria-label="Sample categories">
+            {[ALL, ...categories].map(c => (
+              <button key={c} role="tab" aria-selected={cat === c} className={`cat glass ${cat === c ? "on" : ""}`} onClick={() => pick(c)}>
+                {c}<em>{c === ALL ? allWorks.length : allWorks.filter(w => w.category === c).length}</em>
+              </button>
+            ))}
+          </div>
+        )}
+        <div className="work" key={cat}>
           {shown.map((w, i) => <Card key={w.id} w={w} i={i} onPlay={() => setActive(i)} />)}
           {(showAll || works.length <= INITIAL) && (
             <Reveal className="work-item">

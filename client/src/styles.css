@@ -404,3 +404,12 @@ footer{padding:40px 0 100px;border-top:1px solid var(--line);overflow:hidden}
 .modal-nav button{background:rgba(255,255,255,.08);border:1px solid var(--line);color:#fff;border-radius:999px;padding:7px 14px;font-size:.8rem;cursor:pointer;transition:.25s}
 .modal-nav button:hover{background:rgba(255,255,255,.18)}
 .modal-nav .open-ext{padding:0;font-size:.72rem}
+
+/* sample category tabs */
+.cats{display:flex;flex-wrap:wrap;gap:10px;margin:-20px 0 34px}
+.cat{display:inline-flex;align-items:center;gap:10px;padding:10px 18px;border-radius:999px;cursor:pointer;color:var(--mut);font-size:.9rem;font-weight:600;transition:.3s var(--ease)}
+.cat::after{display:none}
+.cat em{font-style:normal;font-size:.74rem;padding:1px 8px;border-radius:999px;background:rgba(255,255,255,.1);color:#d9dbe1}
+.cat:hover{color:#fff;border-color:rgba(255,255,255,.35)}
+.cat.on{color:#0a0a0d;background:linear-gradient(180deg,#fff,#c3c6ce);border-color:#fff;box-shadow:0 10px 30px rgba(255,255,255,.15)}
+.cat.on em{background:rgba(0,0,0,.12);color:#0a0a0d}

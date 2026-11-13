@@ -45,7 +45,7 @@ function Site() {
       <main>
         <Hero profile={profile} plan={plan} plans={site.plans} />
         <Marquee plans={site.plans} />
-        <Work works={site.works} />
+        <Work allWorks={site.works} />
         <Services services={site.services} />
         <Process days={profile.deliveryDays} />
         <Results />

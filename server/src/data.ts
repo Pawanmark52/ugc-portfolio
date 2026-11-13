@@ -56,27 +56,31 @@ export const profile: Profile = {
   skills: ["UGC ads", "Hook writing", "Fast editing", "Reels / TikTok / Shorts", "Meta Ads ready"],
 };
 
-const driveIds = [
-  "1LXtijoC3jaNrFRWHCL6WzitOwvAcDjTG",
-  "19ppUva18ko87EKPmyNgaB22dlY6hG9UR",
-  "1nsEvi-GfFnaBMc_wcH7v8Yh-RLnp1Sum",
-  "1hpRcGRIriq2Op7Ue2OffGfLRDSvSjy3r",
-  "1D4RST1tlIt1R8JsWTyEBYZM3pjs6-8c0",
-  "1aJysOa6ZZNwJHBKk-SYmY-rE-yg2ohMV",
-  "10KTwR2uzxauVW9OsNBFfjtEqNfXe9OT6",
-  "1fbR5wfDgMJ_8tHUmJwYt2Ba919oVK902",
-  "1eEq_STRxKG4XxFt1eI3vWpQriQfYO0CO",
-  "1N9clhUwM6Xmtx8SYM7GwFc9peiELH4z_",
-  "1zMrf0Aj9An2FinO2B0MbKrqq14cSRQTq",
-  "1xLTmXD9pGlmT1v7jm25vPUSY2TiIjRvq",
-  "1ERWQkksP0FuHK_8DM7l5KVpPHHItKV3h",
-  "17okHyacXpORmiVyTX_KnC3CSQvv7tLs0",
-  "1mNDpSqeWmd378KFbNTwycu5_5RCpzmli",
-  "1dxq4bikaSW0zbpuVKJ46Fleaa5sbwaV4",
-  "1_kwOgNmTk6y2E4sBnniVphYvZKuE5FCA",
-  "1XZcPRwH3g_gVRC4kAF5Dor0OwWIxnjo-",
-  "1j1xpsyWcl0oly5RFTqaQI4tKX_agII3r",
-  "1tHwm79Tc7QPCrd1aOk9Dqk51rAgO4Drd",
+const GENERAL = "UGC video ad";
+
+// [Google Drive file ID, category]. Newest first.
+// To add a video: put it at the top. To put a video in a category, replace GENERAL with a name such as "Car wash".
+const videos: [string, string][] = [
+  ["1LXtijoC3jaNrFRWHCL6WzitOwvAcDjTG", GENERAL],
+  ["19ppUva18ko87EKPmyNgaB22dlY6hG9UR", GENERAL],
+  ["1nsEvi-GfFnaBMc_wcH7v8Yh-RLnp1Sum", GENERAL],
+  ["1hpRcGRIriq2Op7Ue2OffGfLRDSvSjy3r", GENERAL],
+  ["1D4RST1tlIt1R8JsWTyEBYZM3pjs6-8c0", GENERAL],
+  ["1aJysOa6ZZNwJHBKk-SYmY-rE-yg2ohMV", GENERAL],
+  ["10KTwR2uzxauVW9OsNBFfjtEqNfXe9OT6", GENERAL],
+  ["1fbR5wfDgMJ_8tHUmJwYt2Ba919oVK902", GENERAL],
+  ["1eEq_STRxKG4XxFt1eI3vWpQriQfYO0CO", GENERAL],
+  ["1N9clhUwM6Xmtx8SYM7GwFc9peiELH4z_", GENERAL],
+  ["1zMrf0Aj9An2FinO2B0MbKrqq14cSRQTq", GENERAL],
+  ["1xLTmXD9pGlmT1v7jm25vPUSY2TiIjRvq", GENERAL],
+  ["1ERWQkksP0FuHK_8DM7l5KVpPHHItKV3h", GENERAL],
+  ["17okHyacXpORmiVyTX_KnC3CSQvv7tLs0", GENERAL],
+  ["1mNDpSqeWmd378KFbNTwycu5_5RCpzmli", GENERAL],
+  ["1dxq4bikaSW0zbpuVKJ46Fleaa5sbwaV4", GENERAL],
+  ["1_kwOgNmTk6y2E4sBnniVphYvZKuE5FCA", GENERAL],
+  ["1XZcPRwH3g_gVRC4kAF5Dor0OwWIxnjo-", GENERAL],
+  ["1j1xpsyWcl0oly5RFTqaQI4tKX_agII3r", GENERAL],
+  ["1tHwm79Tc7QPCrd1aOk9Dqk51rAgO4Drd", GENERAL],
 ];
 
 const gradients: [string, string][] = [
@@ -86,14 +90,14 @@ const gradients: [string, string][] = [
   ["#334155", "#94a3b8"],
 ];
 
-// Newest first. Add a new video by putting its Google Drive file ID at the top of driveIds.
-export const works: WorkSample[] = driveIds.map((driveFileId, i) => ({
+export const works: WorkSample[] = videos.map(([driveFileId, category], i) => ({
   id: `w${i + 1}`,
   title: `UGC Ad Sample ${i + 1}`,
-  category: "UGC video ad",
+  category,
   driveFileId,
   gradient: gradients[i % gradients.length],
 }));
+
 
 
 export const plans: Plan[] = [
