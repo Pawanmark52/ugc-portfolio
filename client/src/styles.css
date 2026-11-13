@@ -413,3 +413,5 @@ footer{padding:40px 0 100px;border-top:1px solid var(--line);overflow:hidden}
 .cat:hover{color:#fff;border-color:rgba(255,255,255,.35)}
 .cat.on{color:#0a0a0d;background:linear-gradient(180deg,#fff,#c3c6ce);border-color:#fff;box-shadow:0 10px 30px rgba(255,255,255,.15)}
 .cat.on em{background:rgba(0,0,0,.12);color:#0a0a0d}
+
+@media(max-width:760px){.cats{flex-wrap:nowrap;overflow-x:auto;margin-inline:-24px;padding:4px 24px 10px;scrollbar-width:none}.cats::-webkit-scrollbar{display:none}.cat{flex:none}}

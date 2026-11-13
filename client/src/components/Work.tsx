@@ -70,7 +70,9 @@ export function Work({ allWorks }: { allWorks: WorkSample[] }) {
   const [showAll, setShowAll] = useState(false);
 
   // Categories in the order they first appear; the tabs only show when there is more than one.
-  const categories = Array.from(new Set(allWorks.map(w => w.category)));
+  const counts = new Map<string, number>();
+  for (const w of allWorks) counts.set(w.category, (counts.get(w.category) ?? 0) + 1);
+  const categories = [...counts.keys()].sort((a, b) => (counts.get(b) ?? 0) - (counts.get(a) ?? 0));
   const works = cat === ALL ? allWorks : allWorks.filter(w => w.category === cat);
   const shown = showAll ? works : works.slice(0, INITIAL);
   const step = (d: number) => setActive(a => (a === null ? a : (a + d + works.length) % works.length));
@@ -85,7 +87,7 @@ export function Work({ allWorks }: { allWorks: WorkSample[] }) {
           <div className="cats" role="tablist" aria-label="Sample categories">
             {[ALL, ...categories].map(c => (
               <button key={c} role="tab" aria-selected={cat === c} className={`cat glass ${cat === c ? "on" : ""}`} onClick={() => pick(c)}>
-                {c}<em>{c === ALL ? allWorks.length : allWorks.filter(w => w.category === c).length}</em>
+                {c}<em>{c === ALL ? allWorks.length : counts.get(c)}</em>
               </button>
             ))}
           </div>
